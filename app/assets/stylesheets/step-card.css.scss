@@ -1,0 +1,11 @@
+.step-card__progress_marker {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #888;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.step-card__progress_marker--current { border: 2px solid #ff8d00; }
+.step-card__progress_marker--finished { background: #90ee02; }
