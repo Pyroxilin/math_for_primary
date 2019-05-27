@@ -1,0 +1,24 @@
+.task-selector {
+  @extend .col-12;
+  @extend .text-center;
+}
+
+.task-selector__task-marker {
+  @extend .d-inline-block;
+  @extend .align-middle;
+  @extend .border;
+  @extend .border-secondary;
+  @extend .rounded-circle;
+  @extend .ml-2;
+  width: 20px;
+  height: 20px;
+}
+
+.task-selector__task-marker--current {
+  @extend .border;
+  @extend .border-warning;
+}
+
+.task-selector__task-marker--finished {
+  background: #90ee02;
+}

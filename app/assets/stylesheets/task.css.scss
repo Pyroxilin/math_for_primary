@@ -1,0 +1,37 @@
+@import "bootstrap/scss/bootstrap";
+
+.task {
+  @extend .col-12;
+  @extend .py-2;
+}
+
+.task__header {
+  @extend .row;
+  @extend .justify-content-center;
+  @extend .mb-2;
+}
+
+.task__content {
+  @extend .row;
+  @extend .justify-content-center;
+  @extend .mb-2;
+}
+
+.task__footer {
+  @extend .row;
+}
+
+.task__description { @extend .col-auto; }
+.task__options { @extend .col-auto; }
+
+.task__controls {
+  @extend .col-12;
+  @extend .text-center;
+}
+
+.task__submit-btn {
+  @extend .btn;
+  @extend .btn-success;
+}
+
+

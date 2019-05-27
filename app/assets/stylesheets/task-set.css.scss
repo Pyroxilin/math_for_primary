@@ -1,0 +1,71 @@
+@import "bootstrap/scss/bootstrap";
+
+.task-set {
+  @extend .col-12;
+  margin-top: 1rem;
+}
+
+.task-set__header {
+  @extend .row;
+  @extend .py-2;
+  @extend .bg-light;
+  @extend .border;
+  @extend .border-secondary;
+}
+
+.task-set__content {
+  @extend .row;
+  @extend .py-2;
+  @extend .border-left;
+  @extend .border-right;
+  @extend .border-secondary;
+}
+
+.task-set__footer {
+  @extend .row;
+  @extend .justify-content-center;
+  @extend .py-2;
+  @extend .bg-light;
+  @extend .border;
+  @extend .border-secondary;
+}
+
+.task-set__controls { @extend .col-auto; }
+
+.task-set__prev-task-btn {
+  @extend .btn;
+  @extend .btn-outline-info;
+  min-width: 8em;
+}
+
+.task-set__next-task-btn {
+  @extend .btn;
+  @extend .btn-outline-info;
+  @extend .ml-3;
+  min-width: 8em;
+}
+
+.task-selector {
+  @extend .col-12;
+  @extend .text-center;
+}
+
+.task-selector__task-marker {
+  @extend .d-inline-block;
+  @extend .align-middle;
+  @extend .border;
+  @extend .border-secondary;
+  @extend .rounded-circle;
+  @extend .ml-2;
+  width: 20px;
+  height: 20px;
+}
+
+.task-selector__task-marker--current {
+  @extend .border;
+  @extend .border-warning;
+}
+
+.task-selector__task-marker--finished {
+  background: #90ee02;
+}
