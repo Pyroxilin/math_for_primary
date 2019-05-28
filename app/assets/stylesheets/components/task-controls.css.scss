@@ -1,0 +1,47 @@
+@import "bootstrap/scss/bootstrap";
+
+.task-controls {
+  @extend .col-12;
+}
+
+.task-controls__inputs {
+  @extend .row;
+  @extend .justify-content-center;
+}
+
+.task-controls__submit {
+  @extend .row;
+  @extend .justify-content-center;
+  @extend .mt-3;
+}
+
+.task-controls__submit-btn {
+  @extend .btn;
+  @extend .btn-success;
+}
+
+.multiple-choice-task-controls {
+  @extend .col-auto;
+}
+
+.multiple-choice-task-controls__option {
+  @extend .custom-control;
+  @extend .custom-checkbox;
+
+}
+
+.multiple-choice-task-controls__checkbox {
+  @extend .custom-control-input;
+}
+
+.multiple-choice-task-controls__label {
+  @extend .custom-control-label;
+}
+
+.single-input-task-controls {
+  @extend .col-auto;
+}
+
+.single-input-task-controls__input {
+  @extend .form-control;
+}

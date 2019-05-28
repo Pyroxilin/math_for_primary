@@ -1,0 +1,14 @@
+<div class="multiple-choice-task-controls">
+  <% options.each.with_index do |label, id| %>
+    <div class="multiple-choice-task-controls__option">
+      <input class="multiple-choice-task-controls__checkbox"
+             type="checkbox"
+             id="option-<%= id %>">
+
+      <label class="multiple-choice-task-controls__label"
+             for="option-<%= id %>">
+        <%= label %>
+      </label>
+    </div>
+  <% end %>
+</div>

@@ -1,16 +1,25 @@
 <div class="task-set">
   <div class="task-set__header">
-    <%= render 'components/task_selector' %>
+    <%= render 'components/task_selector', tasks_count: tasks_count %>
   </div>
 
-  <div class="task-set__content">
-    <%= render 'components/task' %>
+  <div class="task-set__content task-set__content--correct">
+    <%= render 'components/task', task: task %>
   </div>
 
   <div class="task-set__footer">
     <div class="task-set__controls">
-      <button class="task-set__prev-task-btn">< Prev</button>
-      <button class="task-set__next-task-btn">Next ></button>
+      <a href="?tid=<%= params[:tid].to_i - 1 %>"
+         class="task-set__prev-task-btn
+               <%= 'invisible' if params[:tid].to_i <= 0 %>">
+        < Предыдущий шаг
+      </a>
+
+      <a href="?tid=<%= params[:tid].to_i + 1 %>"
+         class="task-set__next-task-btn
+               <%= 'invisible' if params[:tid].to_i >= 3 %>">
+        Следующий шаг >
+      </a>
     </div>
   </div>
 </div>

@@ -1,7 +1,9 @@
 @import "bootstrap/scss/bootstrap";
 
 .task-set {
-  @extend .col-12;
+  @extend .col-lg-6;
+  @extend .col-md-9;
+  @extend .col-sm-12;
   margin-top: 1rem;
 }
 
@@ -20,6 +22,8 @@
   @extend .border-right;
   @extend .border-secondary;
 }
+
+.task-set__content--correct { background: #e8f5e9 }
 
 .task-set__footer {
   @extend .row;

@@ -11,7 +11,7 @@
   @extend .mb-2;
 }
 
-.task__content {
+.task__body {
   @extend .row;
   @extend .justify-content-center;
   @extend .mb-2;
@@ -21,17 +21,11 @@
   @extend .row;
 }
 
-.task__description { @extend .col-auto; }
-.task__options { @extend .col-auto; }
-
-.task__controls {
-  @extend .col-12;
-  @extend .text-center;
+.task__description {
+  @extend .col-auto;
+  @extend .text-justify;
 }
 
-.task__submit-btn {
-  @extend .btn;
-  @extend .btn-success;
+.task__contents {
+  @extend .col-auto;
 }
-
-

@@ -1,53 +1,17 @@
-<form class="task">
+<div class="task">
   <div class="task__header">
-    <div class="task__description">
-      Выберите верные записи на основе свойств сложения и вычитания:
-    </div>
+    <div class="task__description"><%= task[:description] %></div>
   </div>
 
-  <div class="task__content">
-    <div class="task__options">
-      <!-- TODO: rewrite to move bootstrap classes to scss file -->
-      <div class="custom-control custom-checkbox">
-        <input class="custom-control-input" type="checkbox" id="option-1">
-        <label class="custom-control-label" for="option-1">
-          5555 + 5555 + 4445 = (5555 + 5555) + 4445 = 1445
-        </label>
-      </div>
-
-      <div class="custom-control custom-checkbox">
-        <input class="custom-control-input" type="checkbox" id="option-2">
-        <label class="custom-control-label" for="option-2">
-          (4567 + 2756) – 2567 = (4567 – 2567) + 2756 = 3756
-        </label>
-      </div>
-
-      <div class="custom-control custom-checkbox">
-        <input class="custom-control-input" type="checkbox" id="option-3">
-        <label class="custom-control-label" for="option-3">
-          2111 – 555 – 445 = 2111 – (555 – 445) = 2111 – 110 = 2001
-        </label>
-      </div>
-
-      <div class="custom-control custom-checkbox">
-        <input class="custom-control-input" type="checkbox" id="option-4">
-        <label class="custom-control-label" for="option-4">
-          6374 – (48 + 5374) = 6374 – 5374 – 48 = 1000 – 48 = 952
-        </label>
-      </div>
-
-      <div class="custom-control custom-checkbox">
-        <input class="custom-control-input" type="checkbox" id="option-5">
-        <label class="custom-control-label" for="option-5">
-          5554 – 777 – 223 = 5554 – (777 + 223) = 5554 – 1000 = 4554
-        </label>
-      </div>
+  <div class="task__body">
+    <div class="task__contents">
+      <% task[:contents].each do |text| %>
+        <div class="task__content-block"><%= text %></div>
+      <% end %>
     </div>
   </div>
 
   <div class="task__footer">
-    <div class="task__controls">
-      <button type="submit" class="task__submit-btn">Проверить</button>
-    </div>
+    <%= render 'components/task_controls', task: task %>
   </div>
-</form>
+</div>
