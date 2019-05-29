@@ -9,15 +9,15 @@
 
   <div class="task-set__footer">
     <div class="task-set__controls">
-      <a href="?tid=<%= params[:tid].to_i - 1 %>"
-         class="task-set__prev-task-btn
-               <%= 'invisible' if params[:tid].to_i <= 0 %>">
+      <a class="task-set__task-btn
+               <%= 'invisible' if params[:tid].to_i <= 0 %>"
+         href="?tid=<%= params[:tid].to_i - 1 %>">
         < Предыдущий шаг
       </a>
 
-      <a href="?tid=<%= params[:tid].to_i + 1 %>"
-         class="task-set__next-task-btn
-               <%= 'invisible' if params[:tid].to_i >= 3 %>">
+      <a class="task-set__task-btn
+               <%= 'invisible' if params[:tid].to_i >= 3 %>"
+         href="?tid=<%= params[:tid].to_i + 1 %>">
         Следующий шаг >
       </a>
     </div>

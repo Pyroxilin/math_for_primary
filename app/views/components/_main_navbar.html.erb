@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Math For Primary</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= link_to root_path, class: "nav-item nav-link #{"active" if current_page?(root_path)}" do %>
+        Главная
+      <% end %>
+
+      <%= link_to lessons_path, class: "nav-item nav-link #{"active" if request.path.match? lessons_path}" do %>
+        Уроки
+      <% end %>
+
+      <%= link_to about_path, class: "nav-item nav-link #{"active" if current_page?(about_path)}" do %>
+        О проекте
+      <% end %>
+    </div>
+  </div>
+</nav>

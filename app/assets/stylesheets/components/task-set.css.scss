@@ -1,52 +1,45 @@
 @import "bootstrap/scss/bootstrap";
 
 .task-set {
-  @extend .col-lg-6;
-  @extend .col-md-9;
-  @extend .col-sm-12;
-  margin-top: 1rem;
+  @extend .container;
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .h-100;
 }
 
 .task-set__header {
   @extend .row;
   @extend .py-2;
-  @extend .bg-light;
-  @extend .border;
+  @extend .border-bottom;
   @extend .border-secondary;
 }
 
 .task-set__content {
   @extend .row;
+  @extend .flex-fill;
   @extend .py-2;
-  @extend .border-left;
-  @extend .border-right;
-  @extend .border-secondary;
 }
 
 .task-set__content--correct { background: #e8f5e9 }
 
 .task-set__footer {
   @extend .row;
-  @extend .justify-content-center;
   @extend .py-2;
-  @extend .bg-light;
-  @extend .border;
+  @extend .border-top;
   @extend .border-secondary;
+  @extend .bg-light;
 }
 
-.task-set__controls { @extend .col-auto; }
-
-.task-set__prev-task-btn {
-  @extend .btn;
-  @extend .btn-outline-info;
-  min-width: 8em;
+.task-set__controls {
+  @extend .col-12;
+  @extend .d-flex;
+  @extend .justify-content-between;
 }
 
-.task-set__next-task-btn {
+.task-set__task-btn {
   @extend .btn;
   @extend .btn-outline-info;
-  @extend .ml-3;
-  min-width: 8em;
+  min-width: 30%;
 }
 
 .task-selector {

@@ -1,0 +1,27 @@
+@import "bootstrap/scss/bootstrap";
+
+.sections-menu {
+  @extend .navbar;
+
+  // layout
+  @extend .flex-column;
+  @extend .d-none;
+  @extend .d-md-block;
+  @extend .h-100;
+
+  // style
+  @extend .navbar-dark;
+  @extend .bg-dark;
+
+  position: sticky;
+  top: 3rem;
+}
+
+.sections-menu__nav {
+  @extend .navbar-nav;
+  @extend .mr-auto;
+}
+
+.sections-menu__nav-item { @extend .nav-item; }
+.sections-menu__nav-item--active { @extend .active; }
+.sections-menu__link { @extend .nav-link; }
