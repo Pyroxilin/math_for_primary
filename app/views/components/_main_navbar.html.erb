@@ -1,20 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Math For Primary</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<nav class="main-navbar">
+  <a class="main-navbar__brand-link" href="#">Math For Primary</a>
+
+  <button class="main-navbar__toggler-btn"
+          type="button"
+          data-toggle="collapse"
+          data-target=".main-navbar__collapse"
+          aria-controls="main-navbar__collapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+  >
+    <span class="main-navbar__toggler-btn-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <%= link_to root_path, class: "nav-item nav-link #{"active" if current_page?(root_path)}" do %>
-        Главная
-      <% end %>
 
-      <%= link_to lessons_path, class: "nav-item nav-link #{"active" if request.path.match? lessons_path}" do %>
-        Уроки
-      <% end %>
-
-      <%= link_to about_path, class: "nav-item nav-link #{"active" if current_page?(about_path)}" do %>
-        О проекте
+  <div class="main-navbar__collapse collapse">
+    <div class="main-navbar__nav">
+      <%
+        [
+          ['Главная',   root_path],
+          ['Курс',      lessons_path],
+          ['О проекте', about_path]
+        ].each do |title, url|
+      %>
+        <a class="main-navbar__nav-link
+                  <%= 'main-navbar__nav-link--active' if current_page?(url) %>"
+           href="<%= url %>"
+        ><%= title %></a>
       <% end %>
     </div>
   </div>

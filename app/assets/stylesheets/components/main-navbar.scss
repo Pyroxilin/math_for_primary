@@ -1,0 +1,20 @@
+.main-navbar {
+  @extend .navbar;
+  @extend .navbar-expand-lg;
+  @extend .navbar-dark;
+  background: black;
+}
+
+.main-navbar__brand-link { @extend .navbar-brand; }
+.main-navbar__toggler-btn { @extend .navbar-toggler; }
+.main-navbar__toggler-btn-icon { @extend .navbar-toggler-icon; }
+
+.main-navbar__collapse { @extend .navbar-collapse; }
+.main-navbar__nav { @extend .navbar-nav; }
+
+.main-navbar__nav-link {
+  @extend .nav-item;
+  @extend .nav-link;
+}
+
+.main-navbar__nav-link--active { @extend .active; }
