@@ -1,5 +1,5 @@
 <nav class="main-navbar">
-  <a class="main-navbar__brand-link" href="#">Math For Primary</a>
+  <a class="main-navbar__brand-link" href="<%= root_url %>">Math For Primary</a>
 
   <button class="main-navbar__toggler-btn"
           type="button"
@@ -16,13 +16,13 @@
     <div class="main-navbar__nav">
       <%
         [
-          ['Главная',   root_path],
-          ['Курс',      contents_path],
+          ['Материалы', contents_path],
+          ['Контроль',  exams_path],
           ['О проекте', about_path]
         ].each do |title, url|
       %>
         <a class="main-navbar__nav-link
-                  <%= 'main-navbar__nav-link--active' if current_page?(url) %>"
+                  <%= 'main-navbar__nav-link--active' if request.path =~ /#{url}/ %>"
            href="<%= url %>"
         ><%= title %></a>
       <% end %>
