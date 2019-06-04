@@ -1,0 +1,20 @@
+.theory {
+  @extend .container;
+}
+
+.theory__layout-row {
+  @extend .row ;
+  @extend .justify-content-center;
+}
+
+.theory__layout-col {
+  @extend .col-lg-9 ;
+  @extend .col-md-12 ;
+  @extend .col-sm-12 ;
+  @extend .col-12;
+  @extend .my-2;
+}
+
+.theory__header {
+  @extend .mt-3;
+}

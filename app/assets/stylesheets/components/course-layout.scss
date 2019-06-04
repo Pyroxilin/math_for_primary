@@ -1,0 +1,20 @@
+.course-layout {
+  @extend .row;
+  @extend .flex-fill;
+}
+
+.course-layout__sections_menu {
+  @extend .col-lg-3;
+  @extend .col-md-4;
+  @extend .d-none;
+  @extend .d-sm-none;
+  @extend .d-md-block;
+  @extend .px-0;
+}
+
+.course-layout__section-contents {
+  @extend .col-lg-9;
+  @extend .col-md-8;
+  @extend .col-sm;
+  @extend .px-0;
+}

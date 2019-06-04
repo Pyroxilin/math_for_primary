@@ -3,10 +3,20 @@
 
   <ul class="sections-menu__nav">
     <li class="sections-menu__nav-item">
-      <a class="sections-menu__link" href="#">Преобразование выражений</a>
+      <a class="sections-menu__link
+                <%= 'sections-menu__link--active' if current_page?(content_path('1-1_formula_transformations')) %>"
+         href="<%= content_path('1-1_formula_transformations') %>"
+      >
+        Преобразование выражений
+      </a>
     </li>
     <li class="sections-menu__nav-item">
-      <a class="sections-menu__link sections-menu__link--active" href="#">Практика</a>
+      <a class="sections-menu__link
+                <%= 'sections-menu__link--active' if current_page?(task_set_path('fixme')) %>"
+         href="<%= task_set_path('fixme') %>"
+      >
+        Практика
+      </a>
     </li>
     <li class="sections-menu__nav-item">
       <a class="sections-menu__link" href="#">Невыполнение действий</a>

@@ -1,0 +1,21 @@
+<% id = "collapse-card__collapse-#{SecureRandom.hex(8)}" %>
+
+<div class="collapse-card">
+  <div class="collapse-card__card-header">
+    <button class="collapse-card__collapse-btn"
+            type="button"
+            data-toggle="collapse"
+            data-target="#<%= id %>"
+            aria-expanded="true"
+            aria-controls="<%= id %>"
+    >
+      <%= title %>
+    </button>
+  </div>
+
+  <div id="<%= id %>" class="collapse">
+    <div class="collapse-card__body">
+      <%= render "contents/#{content_id}" %>
+    </div>
+  </div>
+</div>
