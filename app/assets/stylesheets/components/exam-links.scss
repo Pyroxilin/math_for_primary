@@ -1,0 +1,7 @@
+.exam-links { @extend .container-fluid; }
+.exam-links__container {
+  @extend .row;
+  @extend .justify-content-center;
+}
+.exam-links__qr-code { @extend .col-auto; }
+.exam-links__info { @extend .col-auto; }

@@ -16,8 +16,9 @@
   @extend .btn-success;
 }
 .exams-list__plus-icon {
+  @extend %fa-icon;
   @extend .fas;
-  @extend .fa-plus;
+  &:before { content: fa-content($fa-var-plus); }
 }
 
 // CONTENT
@@ -52,14 +53,17 @@
 }
 .exams-list__delete-btn--disabled { @extend .disabled;  }
 .exams-list__eye-icon {
+  @extend %fa-icon;
   @extend .fas;
-  @extend .fa-eye;
+  &:before { content: fa-content($fa-var-eye); }
 }
 .exams-list__pencil-icon {
+  @extend %fa-icon;
   @extend .fas;
-  @extend .fa-pencil-alt;
+  &:before { content: fa-content($fa-var-pencil-alt); }
 }
 .exams-list__trash-icon {
+  @extend %fa-icon;
   @extend .fas;
-  @extend .fa-trash;
+  &:before { content: fa-content($fa-var-trash); }
 }

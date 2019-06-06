@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :task_sets, only: [:show]
   resources :contents, only: [:index, :show]
-  resources :exams, only: [:index, :show]
+  resources :exams, only: [:index, :show] do
+    resources :links, only: [:index], module: 'exams'
+  end
 end

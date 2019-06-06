@@ -1,0 +1,14 @@
+.exam-links-layout {
+  @extend .container-fluid;
+  @extend .h-100;
+  @extend .bg-light;
+}
+.exam-links-layout__row {
+  @extend .row;
+  @extend .h-100;
+  @extend .justify-content-center;
+  @extend .align-items-center;
+}
+.exam-links-layout__col {
+  @extend .col;
+}

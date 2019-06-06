@@ -1,0 +1,6 @@
+ru:
+  models:
+    exam:
+      status:
+        ongoing: Идет
+        finished: Завершен

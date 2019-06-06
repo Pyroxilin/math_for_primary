@@ -27,7 +27,9 @@
         <tbody class="exams-list__table-body">
           <% exams.each do |exam| %>
             <tr>
-              <th scope="row"><%= exam.scheduled_at.strftime("%d.%m.%y") %></th>
+              <th scope="row">
+                <%= exam.scheduled_at.strftime("%d.%m.%y") %>
+              </th>
               <td><%= exam.title %></td>
               <td><%= exam.task_set_title %></td>
               <td>
@@ -36,12 +38,12 @@
                                <%= 'exams-list__status-badge--finished' if exam.finished? %>
                                <%= 'exams-list__status-badge--ongoing' if exam.ongoing? %>"
                   >
-                    <%= exam.status %>
+                    <%= t(exam.status, scope: 'models.exam.status') %>
                   </span>
                 <% end %>
               </td>
               <td>
-                <a class="exams-list__show-btn" href="#">
+                <a class="exams-list__show-btn" href="<%= exam_url(exam.id) %>">
                   <i class="exams-list__eye-icon"></i>
                 </a>
                 <a class="exams-list__edit-btn" href="#">
