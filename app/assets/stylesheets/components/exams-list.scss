@@ -1,0 +1,65 @@
+.exams-list { @extend .container; }
+
+// HEADER
+
+.exams-list__header { @extend .row; }
+.exams-list__page-title {
+  @extend .col;
+  @extend .text-center;
+}
+.exams-list__collection-controls {
+  @extend .col-auto;
+  @extend .align-self-center;
+}
+.exams-list__create-exam-btn {
+  @extend .btn;
+  @extend .btn-success;
+}
+.exams-list__plus-icon {
+  @extend .fas;
+  @extend .fa-plus;
+}
+
+// CONTENT
+
+.exams-list__content { @extend .row; }
+.exams-list__table-container { @extend .col; }
+.exams-list__table {
+  @extend .table;
+  @extend .table-sm;
+  @extend .table-striped;
+}
+.exams-list__table-header { @extend .thead-dark; }
+.exams-list__table-body {}
+.exams-list__status-badge { @extend .badge; }
+.exams-list__status-badge--finished { @extend .badge-dark; }
+.exams-list__status-badge--ongoing { @extend .badge-primary; }
+
+.exams-list__show-btn {
+  @extend .btn;
+  @extend .btn-link;
+  @extend .text-dark;
+}
+.exams-list__edit-btn {
+  @extend .btn;
+  @extend .btn-link;
+  @extend .text-primary;
+}
+.exams-list__delete-btn {
+  @extend .btn;
+  @extend .btn-link;
+  @extend .text-danger;
+}
+.exams-list__delete-btn--disabled { @extend .disabled;  }
+.exams-list__eye-icon {
+  @extend .fas;
+  @extend .fa-eye;
+}
+.exams-list__pencil-icon {
+  @extend .fas;
+  @extend .fa-pencil-alt;
+}
+.exams-list__trash-icon {
+  @extend .fas;
+  @extend .fa-trash;
+}

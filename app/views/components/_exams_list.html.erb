@@ -1,0 +1,63 @@
+<div class="exams-list">
+  <div class="exams-list__header">
+    <div class="exams-list__page-title">
+      <h1>Контроль</h1>
+    </div>
+    <div class="exams-list__collection-controls">
+      <button class="exams-list__create-exam-btn">
+        <i class="exams-list__plus-icon"></i>
+        Создать
+      </button>
+    </div>
+  </div>
+
+  <div class="exams-list__content">
+    <div class="exams-list__table-container">
+      <table class="exams-list__table">
+        <thead class="exams-list__table-header">
+          <tr>
+            <th scope="col">Дата</th>
+            <th scope="col">Название</th>
+            <th scope="col">Тема</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Действия</th>
+          </tr>
+        </thead>
+
+        <tbody class="exams-list__table-body">
+          <% exams.each do |exam| %>
+            <tr>
+              <th scope="row"><%= exam.scheduled_at.strftime("%d.%m.%y") %></th>
+              <td><%= exam.title %></td>
+              <td><%= exam.task_set_title %></td>
+              <td>
+                <% if %w[finished ongoing].include?(exam.status) %>
+                  <span class="exams-list__status-badge
+                               <%= 'exams-list__status-badge--finished' if exam.finished? %>
+                               <%= 'exams-list__status-badge--ongoing' if exam.ongoing? %>"
+                  >
+                    <%= exam.status %>
+                  </span>
+                <% end %>
+              </td>
+              <td>
+                <a class="exams-list__show-btn" href="#">
+                  <i class="exams-list__eye-icon"></i>
+                </a>
+                <a class="exams-list__edit-btn" href="#">
+                  <i class="exams-list__pencil-icon"></i>
+                </a>
+                <a class="exams-list__delete-btn
+                          <%= 'exams-list__delete-btn--disabled' if exam.ongoing? %>"
+                   href="#"
+                >
+                  <i class="exams-list__trash-icon"></i>
+                </a>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
