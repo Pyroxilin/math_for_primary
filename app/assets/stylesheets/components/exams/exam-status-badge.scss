@@ -1,0 +1,3 @@
+.exams-status-badge { @extend .badge; }
+.exams-status-badge--finished { @extend .badge-dark; }
+.exams-status-badge--ongoing { @extend .badge-primary; }

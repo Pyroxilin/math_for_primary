@@ -1,0 +1,42 @@
+.exam-status-controls {
+  @extend .container-fluid;
+  @extend .p-0;
+}
+
+.exam-status-controls__play-btn { @extend .btn; }
+.exam-status-controls__play-btn--off { @extend .btn-outline-primary; }
+.exam-status-controls__stop-btn { @extend .btn; }
+.exam-status-controls__stop-btn--off { @extend .btn-outline-danger; }
+
+.exam-status-controls__play-btn--on,
+.exam-status-controls__stop-btn--on {
+  @extend .btn-outline-dark;
+  @extend .disabled;
+}
+
+.exam-status-controls__qr-code-btn {
+  @extend .btn;
+  @extend .btn-outline-dark;
+  @extend .ml-3;
+}
+
+.exam-status-controls__play-icon,
+.exam-status-controls__stop-icon,
+.exam-status-controls__external-link-icon {
+  @extend %fa-icon;
+  @extend .fas;
+}
+.exam-status-controls__play-icon {
+  &:before { content: fa-content($fa-var-play) }
+}
+.exam-status-controls__stop-icon {
+  &:before { content: fa-content($fa-var-stop) }
+}
+.exam-status-controls__external-link-icon {
+  &:before { content: fa-content($fa-var-external-link-alt) }
+}
+
+.exam-status-controls__btn--current {
+  @extend .btn-outline-primary;
+  @extend .disabled;
+}

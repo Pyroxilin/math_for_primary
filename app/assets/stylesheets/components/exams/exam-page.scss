@@ -1,0 +1,57 @@
+.exam-page { @extend .container; }
+.exam-page__row { @extend .row; }
+
+.exam-page__details,
+.exam-page__results {
+  @extend .col-lg-6;
+  @extend .col-md-6;
+  @extend .col-sm-12;
+}
+
+.exam-page__header-row { @extend .row; }
+.exam-page__header {
+  @extend .col;
+  @extend .text-center;
+}
+
+.exam-page__controls-row {
+  @extend .row;
+  @extend .justify-content-center;
+}
+.exam-page__controls { @extend .col-auto; }
+
+.exam-page__navigation-row { @extend .row; }
+.exam-page__navigation { @extend .col; }
+.exam-page__back-btn {
+  @extend .btn;
+  @extend .btn-outline-dark;
+}
+.exam-page__back-icon {
+  @extend .fas;
+  @extend %fa-icon;
+
+  &:before { content: fa-content($fa-var-angle-left) }
+}
+
+.exam-page__results-header-row { @extend .row; }
+.exam-page__results-header {
+  @extend .col;
+  @extend .text-center;
+}
+
+.exam-page__results-header-row { @extend .row; }
+.exam-page__results-header {
+  @extend .col;
+  @extend .text-center;
+}
+.exam-page__results-controls { @extend .float-right; }
+.exam-page__reload-results-btn {
+  @extend .btn;
+  @extend .btn-link;
+  @extend .text-dark;
+}
+.exam-page__sync-icon {
+  @extend %fa-icon;
+  @extend .fas;
+  &:before { content: fa-content($fa-var-sync) }
+}

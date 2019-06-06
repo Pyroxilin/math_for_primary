@@ -1,0 +1,5 @@
+.exam-details {
+  @extend .table;
+  @extend .table-striped;
+  @extend .mt-3;
+}

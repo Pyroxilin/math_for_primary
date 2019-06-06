@@ -1,0 +1,30 @@
+<table class="exam-results-table">
+  <thead class="exam-results-table__header">
+    <tr>
+      <th scope="col">Студент</th>
+      <th class="exam-results-table__score-header" scope="col">Баллы</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%
+      Array.new(10) do
+        {score: rand(100), name: Array.new(rand(5..10)) { ('a'..'z').to_a.sample }.join}
+      end.each do |result|
+    %>
+      <tr>
+        <th scope="row">
+          <%= result[:name].capitalize %>
+        </th>
+        <td class="exam-results-table__score-colunm">
+          <%= result[:score] %>/100 (<%= result[:score] %>%)
+        </td>
+        <td class="exam-results-table__controls-colunm">
+          <a href="" class="exam-results-table__show-btn">
+            <i class="exam-results-table__eye-icon"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

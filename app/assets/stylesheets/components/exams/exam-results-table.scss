@@ -1,0 +1,20 @@
+.exam-results-table {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-sm;
+}
+.exam-results-table__header {
+  @extend .thead-dark;
+  @extend .py-3;
+}
+.exam-results-table__score-header,
+.exam-results-table__score-colunm {
+  @extend .text-right;
+}
+.exam-results-table__controls-colunm { @extend .text-center; }
+.exam-results-table__show-btn { @extend .text-dark; }
+.exam-results-table__eye-icon {
+  @extend .fas;
+  @extend %fa-icon;
+  &:before { content: fa-content($fa-var-eye) }
+}

@@ -1,0 +1,41 @@
+<div class="exam-page">
+  <div class="exam-page__row">
+    <div class="exam-page__details">
+      <div class="exam-page__header-row">
+        <h1 class="exam-page__header">Группа 3</h1>
+      </div>
+
+      <div class="exam-page__controls-row">
+        <div class="exam-page__controls">
+          <%= render 'components/exams/exam_status_controls', exam_id: 3 %>
+        </div>
+      </div>
+
+      <%= render 'components/exams/exam_details' %>
+
+      <div class="exam-page__navigation-row">
+        <div class="exam-page__navigation">
+          <a href="<%= exams_path %>" class="exam-page__back-btn">
+            <i class="exam-page__back-icon"></i>
+            Назад
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="exam-page__results">
+      <div class="exam-page__results-header-row">
+        <h2 class="exam-page__results-header">
+          Результаты
+          <span class="exam-page__results-controls">
+            <a href="<%= request.path %>" class="exam-page__reload-results-btn">
+              <i class="exam-page__sync-icon"></i>
+            </a>
+          </span>
+        </h2>
+      </div>
+
+      <%= render 'components/exams/results_table' %>
+    </div>
+  </div>
+</div>

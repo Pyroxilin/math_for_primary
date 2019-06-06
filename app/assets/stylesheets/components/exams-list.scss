@@ -7,10 +7,6 @@
   @extend .col;
   @extend .text-center;
 }
-.exams-list__collection-controls {
-  @extend .col-auto;
-  @extend .align-self-center;
-}
 .exams-list__create-exam-btn {
   @extend .btn;
   @extend .btn-success;
@@ -32,9 +28,6 @@
 }
 .exams-list__table-header { @extend .thead-dark; }
 .exams-list__table-body {}
-.exams-list__status-badge { @extend .badge; }
-.exams-list__status-badge--finished { @extend .badge-dark; }
-.exams-list__status-badge--ongoing { @extend .badge-primary; }
 
 .exams-list__show-btn {
   @extend .btn;

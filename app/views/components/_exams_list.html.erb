@@ -1,13 +1,15 @@
 <div class="exams-list">
   <div class="exams-list__header">
     <div class="exams-list__page-title">
-      <h1>Контроль</h1>
-    </div>
-    <div class="exams-list__collection-controls">
-      <button class="exams-list__create-exam-btn">
-        <i class="exams-list__plus-icon"></i>
-        Создать
-      </button>
+      <h1>
+        Контроль
+        <span class="float-right">
+          <button class="exams-list__create-exam-btn">
+            <i class="exams-list__plus-icon"></i>
+            Создать
+          </button>
+        </span>
+      </h1>
     </div>
   </div>
 
@@ -34,9 +36,9 @@
               <td><%= exam.task_set_title %></td>
               <td>
                 <% if %w[finished ongoing].include?(exam.status) %>
-                  <span class="exams-list__status-badge
-                               <%= 'exams-list__status-badge--finished' if exam.finished? %>
-                               <%= 'exams-list__status-badge--ongoing' if exam.ongoing? %>"
+                  <span class="exams-status-badge
+                               <%= 'exams-status-badge--finished' if exam.finished? %>
+                               <%= 'exams-status-badge--ongoing' if exam.ongoing? %>"
                   >
                     <%= t(exam.status, scope: 'models.exam.status') %>
                   </span>
