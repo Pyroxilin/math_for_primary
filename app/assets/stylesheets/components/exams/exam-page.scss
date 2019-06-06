@@ -1,4 +1,7 @@
-.exam-page { @extend .container; }
+.exam-page {
+  @extend .container;
+  @extend .p-0;
+}
 .exam-page__row { @extend .row; }
 
 .exam-page__details,
