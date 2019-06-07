@@ -2,18 +2,18 @@
   <div class="exam-page__row">
     <div class="exam-page__details">
       <div class="exam-page__header-row">
-        <h1 class="exam-page__header">Группа 3</h1>
+        <h1 class="exam-page__header"><%= exam.title %></h1>
       </div>
 
       <div class="exam-page__controls-row">
         <div class="exam-page__controls-col">
-          <%= render 'components/exams/exam_status_controls', exam_id: 3 %>
+          <%= render 'components/exams/exam_status_controls', exam: exam %>
         </div>
       </div>
 
       <div class="exam-page__details-row">
         <div class="exam-page__details-col">
-          <%= render 'components/exams/exam_details' %>
+          <%= render 'components/exams/exam_details', exam: exam %>
         </div>
       </div>
 
@@ -36,7 +36,7 @@
         </h2>
       </div>
 
-      <%= render 'components/exams/results_table' %>
+      <%= render 'components/exams/results_table', exam: exam %>
     </div>
   </div>
 </div>

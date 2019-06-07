@@ -1,13 +1,12 @@
 <div class="exam-links">
   <div class="exam-links__container">
     <div class="exam-links__qr-code">
-      <%= qr_code %>
+      <%= qr_code(join_url(exam.session_token)) %>
     </div>
     <div class="exam-links__info">
-      <h1>Группа 3</h1>
-      <h3>Преобразование выражений</h3>
-      <h5><a href="<%= url %>"><%= url %></a></h5>
-      <h3>Осталось: 15:30</h3>
+      <h1><%= exam.title %></h1>
+      <h3><%= exam.task_set_title %></h3>
+      <h4><%= link_to(join_url(exam.session_token), join_url(exam.session_token)) %></h4>
     </div>
   </div>
 </div>

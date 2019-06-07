@@ -1,0 +1,15 @@
+.exam-session-page {
+  @extend .container;
+  @extend .m-0;
+}
+.exam-session-page__row {
+  @extend .row;
+  @extend .h-100;
+  @extend .justify-content-center;
+}
+.exam-session-page__content-col {
+  @extend .col-auto;
+  @extend .align-self-center;
+  @extend .p-0;
+  min-width: 30%;
+}

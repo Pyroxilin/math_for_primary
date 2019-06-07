@@ -4,21 +4,22 @@
 }
 
 .exam-status-controls__play-btn { @extend .btn; }
-.exam-status-controls__play-btn--off { @extend .btn-outline-primary; }
+.exam-status-controls__play-btn--enabled { @extend .btn-outline-primary; }
 .exam-status-controls__stop-btn { @extend .btn; }
-.exam-status-controls__stop-btn--off { @extend .btn-outline-danger; }
+.exam-status-controls__stop-btn--enabled { @extend .btn-outline-danger; }
 
-.exam-status-controls__play-btn--on,
-.exam-status-controls__stop-btn--on {
+.exam-status-controls__play-btn--disabled,
+.exam-status-controls__stop-btn--disabled,
+.exam-status-controls__qr-code-btn--disabled {
   @extend .btn-outline-dark;
   @extend .disabled;
 }
 
 .exam-status-controls__qr-code-btn {
   @extend .btn;
-  @extend .btn-outline-dark;
   @extend .ml-3;
 }
+.exam-status-controls__qr-code-btn--enabled { @extend .btn-outline-dark; }
 
 .exam-status-controls__play-icon,
 .exam-status-controls__stop-icon,

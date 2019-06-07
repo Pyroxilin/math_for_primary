@@ -3,8 +3,9 @@ module Exams
     layout 'exam_links'
 
     def index
-      @url = 'http://localhost:3000/exam_sessions/MqDzvB'
-      @qr_code = RQRCode::QRCode.new(@url).as_svg(module_size: 5).html_safe
+      id = params.fetch(:exam_id).to_i
+      @exam = Exam.all.select(&:ongoing?).find { |e| e.id == id }
+      raise(ActiveRecord::RecordNotFound) unless @exam
     end
   end
 end

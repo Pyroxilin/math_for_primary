@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :exams, only: [:index, :show, :new, :edit] do
     resources :links, only: [:index], module: 'exams'
   end
+  resources :exam_sessions, only: [:show, :new, :create, :destroy], module: 'exams', controller: 'sessions'
+  resources :join, only: [:show]
 end

@@ -2,16 +2,18 @@
   <tbody>
     <tr>
       <th scope="row">Дата</th>
-      <td>30.06.19</td>
+      <td><%= exam.started_at&.strftime('%d.%m.%y %H:%M') %></td>
     </tr>
     <tr>
       <th scope="row">Тема</th>
-      <td>Преобразование выражений</td>
+      <td><%= exam.task_set_title %></td>
     </tr>
     <tr>
       <th scope="row">Статус</th>
       <td>
-        <span class="exam-status-badge exam-status-badge--ongoing">Идёт</span>
+        <span class="exam-status-badgem exam-status-badge--<%= exam.status %>">
+          <%= t("models.exam.status.#{exam.status}") %>
+        </span>
       </td>
     </tr>
   </tbody>

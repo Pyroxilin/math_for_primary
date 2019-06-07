@@ -1,0 +1,11 @@
+<div class="exam-session-form">
+  <%= form_tag(exam_sessions_path, method: :post, class: "exam-session-form__form") do %>
+    <input type="hidden" name="exam_session[token]" value="<%= token %>"/>
+
+    <div class="exam-session-form__username-form-group">
+      <input type="text" class="exam-session-form__username-field" name="exam_session[username]" placeholder="ФИО (Иванова И.И.)" required/>
+    </div>
+
+    <button type="submit" class="exam-session-form__submit-btn">Начать</button>
+  <% end %>
+</div>

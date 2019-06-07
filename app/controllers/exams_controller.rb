@@ -1,4 +1,6 @@
 class ExamsController < ApplicationController
+  before_action :set_exam, only: [:show, :edit]
+
   def index
     @exams = Exam.all
   end
@@ -11,6 +13,11 @@ class ExamsController < ApplicationController
   end
 
   def edit
+  end
+
+  private
+
+  def set_exam
     @exam = Exam.find(params.fetch(:id).to_i)
   end
 end

@@ -1,0 +1,11 @@
+<div class="card shadow">
+  <h1 class="card-header text-center">Вы <%= username %>?</h1>
+  <div class="card-body row">
+    <div class="col">
+      <%= link_to 'Нет', exam_session_path(token), method: :delete, class: 'btn btn-block btn-secondary' %>
+    </div>
+    <div class="col">
+      <%= link_to 'Да', '#', class: 'btn btn-block btn-primary' %>
+    </div>
+  </div>
+</div>
