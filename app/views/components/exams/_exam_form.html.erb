@@ -1,0 +1,20 @@
+<%= form_for exam, class: 'exam-form' do |f| %>
+  <!-- TITLE -->
+  <div class="exam-form__group">
+    <label for="exam_title">Название</label>
+    <%= f.text_field :title, class: "exam-form__control", placeholder: 'Введите название' %>
+  </div>
+
+  <!-- TASK SET -->
+  <div class="exam-form__group">
+    <label for="exam_task_set">Тема</label>
+    <%
+      options = [
+        ['Преобразование выражений'], ['Невыполнение действий'], ['Частные методы']
+      ]
+    %>
+    <%= f.select(:task_set_title, options, {}, class: 'exam-form__control') %>
+  </div>
+
+  <%= f.submit 'Сохранить', class: 'exam-form__submit-btn' %>
+<% end %>

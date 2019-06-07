@@ -6,19 +6,20 @@
       </div>
 
       <div class="exam-page__controls-row">
-        <div class="exam-page__controls">
+        <div class="exam-page__controls-col">
           <%= render 'components/exams/exam_status_controls', exam_id: 3 %>
         </div>
       </div>
 
-      <%= render 'components/exams/exam_details' %>
+      <div class="exam-page__details-row">
+        <div class="exam-page__details-col">
+          <%= render 'components/exams/exam_details' %>
+        </div>
+      </div>
 
       <div class="exam-page__navigation-row">
-        <div class="exam-page__navigation">
-          <a href="<%= exams_path %>" class="exam-page__back-btn">
-            <i class="exam-page__back-icon"></i>
-            Назад
-          </a>
+        <div class="exam-page__navigation-col">
+          <%= render 'components/back_navigation', back_url: exams_path %>
         </div>
       </div>
     </div>

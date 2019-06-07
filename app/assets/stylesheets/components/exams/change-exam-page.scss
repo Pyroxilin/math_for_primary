@@ -1,0 +1,23 @@
+.change-exam-page { @extend .container; }
+.change-exam-page__content-row {
+  @extend .row;
+  @extend .justify-content-center;
+}
+.change-exam-page__content-col {
+  @extend .col-lg-6;
+  @extend .col-md-8;
+  @extend .col-sm-10;
+  @extend .col-12;
+  @extend .py-3;
+  @extend .px-0;
+}
+.change-exam-page__form-container { @extend .card; }
+.change-exam-page__form-container-header { @extend .card-header; }
+.change-exam-page__form-container-body { @extend .card-body; }
+.change-exam-page__heading { @extend .text-center; }
+
+.change-exam-page__navigation-row {
+  @extend .row;
+  @extend .mt-3;
+}
+.change-exam-page__navigation-col { @extend .col; }

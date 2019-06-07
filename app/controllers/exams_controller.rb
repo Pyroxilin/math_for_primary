@@ -6,6 +6,11 @@ class ExamsController < ApplicationController
   def show
   end
 
-  def link
+  def new
+    @exam = Exam.new
+  end
+
+  def edit
+    @exam = Exam.find(params.fetch(:id).to_i)
   end
 end

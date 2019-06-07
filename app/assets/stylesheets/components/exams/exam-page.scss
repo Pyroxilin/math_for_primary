@@ -17,30 +17,16 @@
   @extend .text-center;
 }
 
-.exam-page__controls-row {
+.exam-page__controls-row,
+.exam-page__details-row,
+.exam-page__navigation-row, {
   @extend .row;
   @extend .justify-content-center;
+  @extend .mb-3;
 }
-.exam-page__controls { @extend .col-auto; }
-
-.exam-page__navigation-row { @extend .row; }
-.exam-page__navigation { @extend .col; }
-.exam-page__back-btn {
-  @extend .btn;
-  @extend .btn-outline-dark;
-}
-.exam-page__back-icon {
-  @extend .fas;
-  @extend %fa-icon;
-
-  &:before { content: fa-content($fa-var-angle-left) }
-}
-
-.exam-page__results-header-row { @extend .row; }
-.exam-page__results-header {
-  @extend .col;
-  @extend .text-center;
-}
+.exam-page__controls-col { @extend .col-auto; }
+.exam-page__details-col,
+.exam-page__navigation-col { @extend .col; }
 
 .exam-page__results-header-row { @extend .row; }
 .exam-page__results-header {

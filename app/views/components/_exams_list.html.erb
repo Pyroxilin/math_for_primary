@@ -4,10 +4,10 @@
       <h1>
         Контроль
         <span class="float-right">
-          <button class="exams-list__create-exam-btn">
+          <a class="exams-list__create-exam-btn" href="<%= new_exam_path %>">
             <i class="exams-list__plus-icon"></i>
             Создать
-          </button>
+          </a>
         </span>
       </h1>
     </div>
@@ -30,7 +30,7 @@
           <% exams.each do |exam| %>
             <tr>
               <th scope="row">
-                <%= exam.scheduled_at.strftime("%d.%m.%y") %>
+                <%= exam.started_at&.strftime("%d.%m.%y %H:%M") %>
               </th>
               <td><%= exam.title %></td>
               <td><%= exam.task_set_title %></td>
@@ -48,7 +48,7 @@
                 <a class="exams-list__show-btn" href="<%= exam_url(exam.id) %>">
                   <i class="exams-list__eye-icon"></i>
                 </a>
-                <a class="exams-list__edit-btn" href="#">
+                <a class="exams-list__edit-btn" href="<%= edit_exam_url(exam.id) %>">
                   <i class="exams-list__pencil-icon"></i>
                 </a>
                 <a class="exams-list__delete-btn

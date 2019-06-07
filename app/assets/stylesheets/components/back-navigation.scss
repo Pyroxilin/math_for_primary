@@ -1,0 +1,15 @@
+.back-navigation {
+  @extend .container-fluid;
+  @extend .p-0;
+}
+.back-navigation__back-btn {
+  @extend .btn;
+  @extend .btn-outline-dark;
+  @extend .w-25;
+}
+.back-navigation__back-icon {
+  @extend .fas;
+  @extend %fa-icon;
+
+  &:before { content: fa-content($fa-var-angle-left) }
+}
