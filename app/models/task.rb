@@ -1,6 +1,7 @@
 class Task
   TASKS = [
     {
+      id: 0,
       type: :multiple_choice,
       description: 'Выберите верные записи на основе свойств сложения и вычитания',
       contents: [],
@@ -14,6 +15,7 @@ class Task
       answer: [1,3,4]
     },
     {
+      id: 1,
       type: :multiple_choice,
       description: 'Выберите верные записи на основе свойств умножения',
       contents: [],
@@ -27,6 +29,7 @@ class Task
       answer: [1,2,4]
     },
     {
+      id: 2,
       type: :multiple_choice,
       description: 'Выберите верные записи на основе свойств деления',
       contents: [],
@@ -40,6 +43,7 @@ class Task
       answer: [1,2,3]
     },
     {
+      id: 3,
       type: :single_input,
       description: 'Выберите записи, в которых свойства действий применены
   верно, и вычислите их значения. Результаты впишите в поле ответа через пробел',

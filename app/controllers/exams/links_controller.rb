@@ -3,8 +3,8 @@ module Exams
     layout 'exam_links'
 
     def index
-      id = params.fetch(:exam_id).to_i
-      @exam = Exam.all.select(&:ongoing?).find { |e| e.id == id }
+      token = params.fetch(:exam_id)
+      @exam = Exam.all.select(&:ongoing?).find { |e| e.session_token == token }
       raise(ActiveRecord::RecordNotFound) unless @exam
     end
   end

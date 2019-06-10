@@ -1,0 +1,24 @@
+<div class="task-set-navigation">
+  <div class="task-set-navigation__row">
+    <div class="task-set-navigation__col">
+      <a class="task-set-navigation__btn
+                <%= 'task-set-navigation__btn--hidden' if prev_url.nil? %>"
+         href="<%= prev_url || '#' %>"
+      >
+        <
+        <span class="task-set-navigation__hidden-xs">Предыдущий шаг</span>
+        <span class="task-set-navigation__visible-xs">Назад</span>
+      </a>
+    </div>
+    <div class="task-set-navigation__col">
+      <a class="task-set-navigation__btn
+                <%= 'task-set-navigation__btn--hidden' if next_url.nil? %>"
+         href="<%= next_url || '#' %>"
+      >
+        <span class="task-set-navigation__hidden-xs">Следующий шаг</span>
+        <span class="task-set-navigation__visible-xs">Вперёд</span>
+        >
+      </a>
+    </div>
+  </div>
+</div>

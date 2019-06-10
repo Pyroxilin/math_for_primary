@@ -13,7 +13,7 @@
 
   <a class="exam-status-controls__qr-code-btn
             exam-status-controls__qr-code-btn--<%= exam.ongoing? ? 'enabled' : 'disabled' %>"
-     target="_blank" href="<%= exam_links_url(exam.id) %>"
+     target="_blank" href="<%= exam_links_url(exam.session_token) %>"
   >
     <i class="exam-status-controls__external-link-icon"></i> Страница с QR-кодом
   </a>

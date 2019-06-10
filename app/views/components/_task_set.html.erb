@@ -1,25 +1,23 @@
 <div class="task-set">
   <div class="task-set__header">
-    <%= render 'components/task_selector', tasks_count: tasks_count %>
+    <div class="task-set__task-selector">
+      <%= render 'components/task_set/task_selector',
+                 tasks: tasks,
+                 current_task_id: current_task[:id] %>
+    </div>
   </div>
 
-  <div class="task-set__content">
-    <%= render 'components/task', task: task %>
+  <div class="task-set__body">
+    <div class="task-set__task">
+      <%= render 'components/task', task: current_task %>
+    </div>
   </div>
 
   <div class="task-set__footer">
-    <div class="task-set__controls">
-      <a class="task-set__task-btn
-               <%= 'invisible' if params[:tid].to_i <= 0 %>"
-         href="?tid=<%= params[:tid].to_i - 1 %>">
-        < Предыдущий шаг
-      </a>
-
-      <a class="task-set__task-btn
-               <%= 'invisible' if params[:tid].to_i >= 3 %>"
-         href="?tid=<%= params[:tid].to_i + 1 %>">
-        Следующий шаг >
-      </a>
+    <div class="task-set__navigation">
+      <%= render 'components/task_set/navigation',
+                 prev_url: (current_task[:id] - 1) >= 0 ? "?tid=#{(current_task[:id] - 1)}" : nil,
+                 next_url: (current_task[:id] + 1) < tasks.size ? "?tid=#{(current_task[:id] + 1)}" : nil %>
     </div>
   </div>
 </div>

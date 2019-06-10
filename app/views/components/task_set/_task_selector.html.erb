@@ -1,0 +1,9 @@
+<div class="task-selector">
+  <% tasks.each do |task| %>
+    <a class="task-selector__task-marker
+              <%= 'task-selector__task-marker--solved' if task[:status] == 'solved' %>
+              <%= 'task-selector__task-marker--current' if task[:id] == current_task_id %>"
+       href="?tid=<%= task[:id] %>"
+    ></a>
+  <% end %>
+</div>

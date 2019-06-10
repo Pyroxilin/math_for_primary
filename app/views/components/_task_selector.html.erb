@@ -1,9 +1,0 @@
-<div class="task-selector">
-  <% 0.upto(3).each do |i| %>
-    <a href="?tid=<%= i %>"
-       class="
-         task-selector__task-marker
-         <%= "task-selector__task-marker--finished" if i < 2 %>
-         <%= "task-selector__task-marker--current" if params[:tid].to_i == i %>"></a>
-  <% end %>
-</div>

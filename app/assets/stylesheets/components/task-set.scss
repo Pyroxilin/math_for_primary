@@ -1,66 +1,40 @@
 .task-set {
-  @extend .container;
+  @extend .container-fluid;
+  @extend .h-100;
   @extend .d-flex;
   @extend .flex-column;
-  @extend .h-100;
-}
 
-.task-set__header {
-  @extend .row;
-  @extend .py-2;
-  @extend .border-bottom;
-  @extend .border-secondary;
-}
+  .task-set__header {
+    @extend .row;
+    @extend .border-dark;
+    @extend .border-bottom;
+    @extend .bg-light;
 
-.task-set__content {
-  @extend .row;
-  @extend .flex-fill;
-  @extend .py-2;
-}
+    .task-set__task-selector {
+      @extend .col;
+      @extend .text-center;
+      @extend .py-2;
+    }
+  }
 
-.task-set__content--correct { background: #e8f5e9 }
+  .task-set__body {
+    @extend .row;
+    @extend .text-center;
+    @extend .flex-grow-1;
 
-.task-set__footer {
-  @extend .row;
-  @extend .py-2;
-  @extend .border-top;
-  @extend .border-secondary;
-  @extend .bg-light;
-}
+    .task-set__task {
+      @extend .col;
+      @extend .p-0;
+    }
+  }
 
-.task-set__controls {
-  @extend .col-12;
-  @extend .d-flex;
-  @extend .justify-content-between;
-}
+  .task-set__footer {
+    @extend .row;
+    @extend .py-2;
+    @extend .border-dark;
+    @extend .border-top;
+    @extend .bg-light;
 
-.task-set__task-btn {
-  @extend .btn;
-  @extend .btn-outline-info;
-  min-width: 30%;
-}
-
-.task-selector {
-  @extend .col-12;
-  @extend .text-center;
-}
-
-.task-selector__task-marker {
-  @extend .d-inline-block;
-  @extend .align-middle;
-  @extend .border;
-  @extend .border-secondary;
-  @extend .rounded-circle;
-  @extend .ml-2;
-  width: 20px;
-  height: 20px;
-}
-
-.task-selector__task-marker--current {
-  @extend .border;
-  @extend .border-warning;
-}
-
-.task-selector__task-marker--finished {
-  background: #90ee02;
+    .task-set__navigation { @extend .col; }
+  }
 }

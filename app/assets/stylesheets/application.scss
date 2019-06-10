@@ -12,6 +12,7 @@
  *
  */
 
+$enable-responsive-font-sizes: true;
 @import "bootstrap/scss/bootstrap";
 
 $fa-font-path: "/packs/webfonts" !default;
@@ -20,7 +21,7 @@ $fa-font-path: "/packs/webfonts" !default;
 @import '@fortawesome/fontawesome-free/scss/solid';
 
 @import './components/**/*';
+@import './pages/**/*';
+@import './layouts/**/*';
 
-body {
-  margin-bottom: -60px;
-}
+body { margin-bottom: -60px; }

@@ -4,8 +4,8 @@ module Exams
 
     def show
       @token = params.fetch(:id)
-      exam = find_exam(@token)
-      @username = session.dig('exam_sessions', exam.id.to_s, 'username')
+      @exam = find_exam(@token)
+      @username = session.dig('exam_sessions', @exam.id.to_s, 'username')
 
       redirect_to new_exam_session_path(session_token: @token) if @username.nil?
     end
@@ -20,7 +20,7 @@ module Exams
       exam = find_exam(token)
 
       session['exam_sessions'][exam.id] = {'username' => username }
-      redirect_to exam_session_path(token)
+      redirect_to exam_tasks_path(exam.id)
     end
 
     def destroy

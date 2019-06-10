@@ -1,29 +1,36 @@
 .task {
   @extend .col-12;
   @extend .py-2;
+
+  .task__header {
+    @extend .row;
+    @extend .justify-content-center;
+    @extend .mb-2;
+
+    .task__description-container { @extend .col-auto; }
+    .task__description {
+      @extend .w-auto;
+      @extend .text-justify;
+      max-width: 80ch;
+    }
+  }
+
+  .task__body {
+    @extend .row;
+    @extend .justify-content-center;
+    @extend .mb-2;
+
+    .task__contents {
+      @extend .col-auto;
+      @extend .text-left;
+
+      .task__content-block { @extend .mt-2; }
+    }
+  }
+
+  .task__footer { @extend .row; }
 }
 
-.task__header {
-  @extend .row;
-  @extend .justify-content-center;
-  @extend .mb-2;
-}
 
-.task__body {
-  @extend .row;
-  @extend .justify-content-center;
-  @extend .mb-2;
-}
 
-.task__footer {
-  @extend .row;
-}
 
-.task__description {
-  @extend .col-auto;
-  @extend .text-justify;
-}
-
-.task__contents {
-  @extend .col-auto;
-}

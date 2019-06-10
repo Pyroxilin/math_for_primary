@@ -5,7 +5,7 @@
       <%= link_to 'Нет', exam_session_path(token), method: :delete, class: 'btn btn-block btn-secondary' %>
     </div>
     <div class="col">
-      <%= link_to 'Да', '#', class: 'btn btn-block btn-primary' %>
+      <%= link_to 'Да', exam_tasks_path(exam_id), class: 'btn btn-block btn-primary' %>
     </div>
   </div>
 </div>

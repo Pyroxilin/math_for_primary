@@ -1,0 +1,24 @@
+.task-set-navigation { @extend .container-fluid; }
+.task-set-navigation__row {
+  @extend .row;
+  @extend .d-flex;
+  @extend .justify-content-between;
+}
+.task-set-navigation__col {
+  @extend .col-auto;
+  @extend .p-0;
+}
+.task-set-navigation__btn {
+  @extend .btn;
+  @extend .btn-outline-info;
+}
+.task-set-navigation__hidden-xs {
+  @extend .d-none;
+  @extend .d-sm-inline;
+}
+.task-set-navigation__visible-xs {
+  @extend .d-inline;
+  @extend .d-sm-none;
+}
+
+.task-set-navigation__btn--hidden { @extend .invisible; }

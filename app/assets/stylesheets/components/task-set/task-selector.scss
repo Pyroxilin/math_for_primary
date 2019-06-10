@@ -1,0 +1,21 @@
+.task-selector {
+  @extend .d-flex;
+  @extend .flex-row;
+  @extend .justify-content-center;
+}
+
+.task-selector__task-marker {
+  @extend .d-inline-block;
+  @extend .mx-1;
+  @extend .border;
+  @extend .rounded-circle;
+  @extend .border-dark;
+
+  height: 25px;
+  width: 25px;
+  line-height: 0;
+}
+.task-selector__task-marker--solved { @extend .bg-success; }
+.task-selector__task-marker.task-selector__task-marker--current {
+  @extend .border-danger;
+}

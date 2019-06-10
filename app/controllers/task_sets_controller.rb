@@ -3,9 +3,9 @@ class TaskSetsController < ApplicationController
 
   def show
     task_set = TaskSet.find(params.fetch(:id))
-    @tasks_count = task_set.tasks.count
+    @tasks = task_set.tasks.map { |task| { id: task[:id], status: nil } }
 
     task_id = params.fetch(:tid, 0).to_i
-    @task = task_set.tasks.fetch(task_id, task_set.tasks.first)
+    @current_task = task_set.tasks.fetch(task_id, task_set.tasks.first)
   end
 end

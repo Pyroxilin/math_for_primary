@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   resources :task_sets, only: [:show]
   resources :contents, only: [:index, :show]
   resources :exams, only: [:index, :show, :new, :edit] do
-    resources :links, only: [:index], module: 'exams'
+    with_options module: 'exams' do
+      resources :links, only: [:index]
+      resources :tasks, only: [:index]
+    end
   end
   resources :exam_sessions, only: [:show, :new, :create, :destroy], module: 'exams', controller: 'sessions'
+
   resources :join, only: [:show]
 end
