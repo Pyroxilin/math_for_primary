@@ -1,0 +1,15 @@
+<div class="footer">
+  <div class="footer__row">
+    <div class="footer__content-col">
+      Тут будет что-то, сами пока не знаем что
+    </div>
+
+    <div class="footer__auth-controls-col">
+      <% if user_signed_in? %>
+        <%= render 'partials/components/sign_out_controls', user: current_user.email %>
+      <% else %>
+        <%= render 'partials/components/sign_in_controls' %>
+      <% end %>
+    </div>
+  </div>
+</div>

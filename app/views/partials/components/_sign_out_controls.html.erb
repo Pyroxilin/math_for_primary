@@ -1,0 +1,12 @@
+<div class="sign-out-controls">
+  <span class="mr-3 text-muted">
+    <i class="sign-out-controls__user-icon"></i>
+    <%= user %>
+  </span>
+
+  <%= link_to destroy_user_session_path, method: :delete, class: "sign-out-controls__sign-out-btn" do %>
+    Выход
+    <i class="sign-out-controls__sign-out-icon"></i>
+  <% end %>
+  </a>
+</div>

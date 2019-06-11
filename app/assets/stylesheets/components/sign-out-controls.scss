@@ -1,0 +1,18 @@
+.sign-out-controls__sign-out-btn {
+  @extend .btn;
+  @extend .btn-outline-secondary;
+}
+
+.sign-out-controls__user-icon {
+  @extend .fas;
+  @extend %fa-icon;
+
+  &:before { content: fa-content($fa-var-user) }
+}
+
+.sign-out-controls__sign-out-icon {
+  @extend .fas;
+  @extend %fa-icon;
+
+  &:before { content: fa-content($fa-var-sign-out-alt) }
+}

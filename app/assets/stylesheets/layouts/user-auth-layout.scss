@@ -1,0 +1,10 @@
+.user-auth-layout { @extend .container; }
+.user-auth-layout__row {
+  @extend .row;
+  @extend .h-100;
+  @extend .justify-content-center;
+}
+.user-auth-layout__col {
+  @extend .col-auto;
+  @extend .align-self-center;
+}

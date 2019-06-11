@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 2.5'
 # QR codes
 gem 'rqrcode'
 
+# Authentication
+gem 'devise', '~> 4.6'
+gem 'devise-i18n', '~> 1.8'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

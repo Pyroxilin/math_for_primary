@@ -17,9 +17,9 @@
       <%
         [
           ['Материалы', contents_path],
-          ['Контроль',  exams_path],
+          (['Контроль',  exams_path] if user_signed_in?),
           ['О проекте', about_path]
-        ].each do |title, url|
+        ].compact.each do |title, url|
       %>
         <a class="main-navbar__nav-link
                   <%= 'main-navbar__nav-link--active' if request.path =~ /#{url}/ %>"

@@ -1,0 +1,11 @@
+.sign-in-controls__sign-in-btn {
+  @extend .btn;
+  @extend .btn-outline-secondary;
+}
+
+.sign-in-controls__sign-in-icon {
+  @extend .fas;
+  @extend %fa-icon;
+
+  &:before { content: fa-content($fa-var-sign-in-alt) }
+}

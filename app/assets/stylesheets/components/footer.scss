@@ -1,8 +1,16 @@
 .footer {
-  @extend .container;
-  background-color: #f5f5f5;
+  @extend .container-fluid;
+  @extend .bg-light;
 }
 
-.footer__content {
+.footer__row {
+  @extend .row;
+  @extend .justify-content-between;
+}
+
+.footer__content-col {
+  @extend .col-auto;
   @extend .text-muted;
 }
+
+.footer__auth-controls-col { @extend .col-auto; }

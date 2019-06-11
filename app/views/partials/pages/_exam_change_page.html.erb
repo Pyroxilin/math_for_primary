@@ -1,0 +1,21 @@
+<div class="exam-change-page">
+  <div class="exam-change-page__content-row">
+    <div class="exam-change-page__content-col">
+      <div class="exam-change-page__form-container">
+        <div class="exam-change-page__form-container-header">
+          <% action_name = exam.new_record? ? 'Создание' : 'Изменение' %>
+          <h1 class="exam-change-page__heading"><%= action_name %> сессии контроля</h1>
+        </div>
+        <div class="exam-change-page__form-container-body">
+          <%= render 'partials/components/exams/exam_form', exam: exam %>
+        </div>
+      </div>
+
+      <div class="exam-change-page__navigation-row">
+        <div class="exam-change-page__navigation-col">
+          <%= render 'partials/components/back_navigation', back_url: exams_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
