@@ -2,5 +2,11 @@ ru:
   models:
     exam:
       status:
+        created: Ожидает проведения
         ongoing: Идет
         finished: Завершен
+  activerecord:
+    attributes:
+      exam:
+        title: Название
+

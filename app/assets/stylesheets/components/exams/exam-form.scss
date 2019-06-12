@@ -1,7 +1,20 @@
 .exam-form {}
 .exam-form__group { @extend .form-group; }
 .exam-form__control { @extend .form-control; }
+.exam-form__control--invalid { @extend .is-invalid; }
 .exam-form__submit-btn {
   @extend .btn;
   @extend .btn-primary;
+}
+
+.exam-form__errors {
+  @extend .bg-light;
+  @extend .border;
+  @extend .border-danger;
+  @extend .rounded;
+}
+
+.exam-form__error {
+  @extend .py-3;
+  @extend .text-danger;
 }

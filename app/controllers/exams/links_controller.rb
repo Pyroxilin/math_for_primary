@@ -6,8 +6,7 @@ module Exams
 
     def index
       token = params.fetch(:exam_id)
-      @exam = Exam.all.select(&:ongoing?).find { |e| e.session_token == token }
-      raise(ActiveRecord::RecordNotFound) unless @exam
+      @exam = Exam.find_by_token(token)
     end
   end
 end

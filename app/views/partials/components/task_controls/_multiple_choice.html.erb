@@ -1,5 +1,5 @@
 <div class="multiple-choice-task-controls">
-  <% options.each.with_index do |label, id| %>
+  <% options.each.with_index do |option, id| %>
     <div class="multiple-choice-task-controls__option">
       <input class="multiple-choice-task-controls__checkbox"
              type="checkbox"
@@ -7,7 +7,7 @@
 
       <label class="multiple-choice-task-controls__label"
              for="option-<%= id %>">
-        <%= label %>
+        <%= option.text %>
       </label>
     </div>
   <% end %>

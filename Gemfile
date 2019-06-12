@@ -5,6 +5,8 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0.rc1'
+gem 'rails-i18n', '~> 6.0.0.beta1'
+
 # Use postgres as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -39,6 +41,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
+  gem 'pry-rails'
 end
 
 group :development do

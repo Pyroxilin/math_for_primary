@@ -35,14 +35,9 @@
               <td><%= exam.title %></td>
               <td><%= exam.task_set.title %></td>
               <td>
-                <% if %w[finished ongoing].include?(exam.status) %>
-                  <span class="exams-status-badge
-                               <%= 'exams-status-badge--finished' if exam.finished? %>
-                               <%= 'exams-status-badge--ongoing' if exam.ongoing? %>"
-                  >
-                    <%= t(exam.status, scope: 'models.exam.status') %>
-                  </span>
-                <% end %>
+                <span class="exams-status-badge exams-status-badge--<%= exam.status %>">
+                  <%= t(exam.status, scope: 'models.exam.status') %>
+                </span>
               </td>
               <td>
                 <a class="exams-list__show-btn" href="<%= exam_url(exam.id) %>">
@@ -51,12 +46,19 @@
                 <a class="exams-list__edit-btn" href="<%= edit_exam_url(exam.id) %>">
                   <i class="exams-list__pencil-icon"></i>
                 </a>
-                <a class="exams-list__delete-btn
-                          <%= 'exams-list__delete-btn--disabled' if exam.ongoing? %>"
-                   href="#"
-                >
+                <%=
+                  link_to(
+                    exam_path(exam),
+                    method: :delete,
+                    class: <<~CLASS,
+                      exams-list__delete-btn
+                      #{'exams-list__delete-btn--disabled' if exam.ongoing?}
+                    CLASS
+                    data: { confirm: 'Вы уверены?' }
+                  ) do
+                %>
                   <i class="exams-list__trash-icon"></i>
-                </a>
+                <% end %>
               </td>
             </tr>
           <% end %>

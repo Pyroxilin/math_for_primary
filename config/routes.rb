@@ -6,7 +6,12 @@ Rails.application.routes.draw do
 
   resources :task_sets, only: [:show]
   resources :contents, only: [:index, :show]
-  resources :exams, only: [:index, :show, :new, :edit] do
+  resources :exams do
+    member do
+      post 'start', to: 'exams#start', as: :start
+      post 'stop', to: 'exams#stop', as: :stop
+    end
+
     with_options module: 'exams' do
       resources :links, only: [:index]
       resources :tasks, only: [:index]

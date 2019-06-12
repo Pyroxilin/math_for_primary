@@ -1,15 +1,29 @@
 <div class="exam-status-controls">
-  <a href="#" class="exam-status-controls__play-btn
-                     exam-status-controls__play-btn--<%= exam.pending? ? 'enabled' : 'disabled' %>"
-  >
+  <%=
+    link_to(
+      start_exam_path(exam),
+      method: :post,
+      class: <<~CLASS
+        exam-status-controls__play-btn
+        exam-status-controls__play-btn--#{exam.created? ? 'enabled' : 'disabled'}
+      CLASS
+    ) do
+  %>
     <i class="exam-status-controls__play-icon"></i>
-  </a>
+  <% end %>
 
-  <a href="#" class="exam-status-controls__stop-btn
-                     exam-status-controls__stop-btn--<%= exam.ongoing? ? 'enabled' : 'disabled' %>"
-  >
+  <%=
+    link_to(
+      stop_exam_path(exam),
+      method: :post,
+      class: <<~CLASS
+        exam-status-controls__stop-btn
+        exam-status-controls__stop-btn--#{exam.ongoing? ? 'enabled' : 'disabled'}
+      CLASS
+    ) do
+  %>
     <i class="exam-status-controls__stop-icon"></i>
-  </a>
+  <% end %>
 
   <a class="exam-status-controls__qr-code-btn
             exam-status-controls__qr-code-btn--<%= exam.ongoing? ? 'enabled' : 'disabled' %>"

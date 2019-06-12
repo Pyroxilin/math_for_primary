@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_11_132628) do
+ActiveRecord::Schema.define(version: 2019_06_12_144429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "exams", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title", null: false
+    t.datetime "started_at"
+    t.integer "status", default: 0, null: false
+    t.integer "task_set_id", null: false
+    t.string "session_token", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["session_token"], name: "index_exams_on_session_token", unique: true
+    t.index ["user_id"], name: "index_exams_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +40,5 @@ ActiveRecord::Schema.define(version: 2019_06_11_132628) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "exams", "users"
 end

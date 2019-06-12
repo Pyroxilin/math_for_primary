@@ -1,18 +1,30 @@
 <%= form_for exam, class: 'exam-form' do |f| %>
+  <% if exam.errors.any? %>
+    <ul class="exam-form__errors">
+      <% exam.errors.full_messages.each do |msg| %>
+        <li class="exam-form__error"><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <!-- TITLE -->
   <div class="exam-form__group">
     <label for="exam_title">Название</label>
-    <%= f.text_field :title, class: "exam-form__control", placeholder: 'Введите название' %>
+    <%=
+      f.text_field(
+        :title,
+        class: <<~CLASS,
+          exam-form__control
+          #{ 'exam-form__control--invalid' if exam.errors.has_key?(:title) }
+        CLASS
+        placeholder: 'Введите название'
+      )
+    %>
   </div>
 
   <!-- TASK SET -->
   <div class="exam-form__group">
     <label for="exam_task_set">Тема</label>
-    <%
-      options = [
-        ['Преобразование выражений'], ['Невыполнение действий'], ['Частные методы']
-      ]
-    %>
     <%= f.select(:task_set_id, TaskSet.all.map { |ts| [ts.title, ts.id] }, {}, class: 'exam-form__control') %>
   </div>
 
