@@ -13,7 +13,7 @@
         ['Преобразование выражений'], ['Невыполнение действий'], ['Частные методы']
       ]
     %>
-    <%= f.select(:task_set_title, options, {}, class: 'exam-form__control') %>
+    <%= f.select(:task_set_id, TaskSet.all.map { |ts| [ts.title, ts.id] }, {}, class: 'exam-form__control') %>
   </div>
 
   <%= f.submit 'Сохранить', class: 'exam-form__submit-btn' %>

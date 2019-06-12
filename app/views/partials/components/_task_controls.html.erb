@@ -1,8 +1,8 @@
 <form class="task-controls">
   <div class="task-controls__inputs">
-    <% if task[:type] == :multiple_choice %>
+    <% if task.multiple_choice? %>
       <%= render 'partials/components/task_controls/multiple_choice', options: task[:options] %>
-    <% elsif task[:type] == :single_input %>
+    <% elsif task.single_input? %>
       <%= render 'partials/components/task_controls/single_input' %>
     <% end %>
   </div>

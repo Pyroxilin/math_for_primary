@@ -33,7 +33,7 @@
                 <%= exam.started_at&.strftime("%d.%m.%y %H:%M") %>
               </th>
               <td><%= exam.title %></td>
-              <td><%= exam.task_set_title %></td>
+              <td><%= exam.task_set.title %></td>
               <td>
                 <% if %w[finished ongoing].include?(exam.status) %>
                   <span class="exams-status-badge

@@ -1,13 +1,13 @@
 <div class="task">
   <div class="task__header">
     <div class="task__description-container">
-      <div class="task__description"><%= task[:description] %></div>
+      <div class="task__description"><%= task.description %></div>
     </div>
   </div>
 
   <div class="task__body">
     <div class="task__contents">
-      <% task[:contents].each do |text| %>
+      <% task.contents.each do |text| %>
         <div class="task__content-block"><%= text %></div>
       <% end %>
     </div>
