@@ -4,7 +4,7 @@
     - id: 0
       type: multiple_choice
       description: Выберите верные записи на основе свойств сложения и вычитания
-      contents: []
+      contents:
       options:
         - text: "5555 + 5555 + 4445 = (5555 + 5555) + 4445 = 1445"
           correct: false
@@ -20,7 +20,7 @@
     - id: 1
       type: multiple_choice
       description: Выберите верные записи на основе свойств умножения
-      contents: []
+      contents:
       options:
         - text: "125 ∙ 111 ∙ 4 ∙ 8 = (125 ∙ 4) ∙ (111 ∙ 8) = 1000 ∙ 888 = 888000"
           correct: false
@@ -36,7 +36,7 @@
     - id: 2
       type: multiple_choice
       description: Выберите верные записи на основе свойств деления
-      contents: []
+      contents:
       options:
         - text: "546 : 3 + 54 : 3 = (546 + 54) : (3 + 3) = 600 : 6 = 100"
           correct: false
@@ -52,13 +52,283 @@
     - id: 3
       type: single_input
       description: Выберите записи, в которых свойства действий применены верно, и вычислите их значения. Результаты впишите в поле ответа через пробел
-      contents:
-        - "2111 – 555 – 445 = 2111 – (555 + 445)"
-        - "530 + 70 – 36 + 24 = (530 + 70) – (36 + 24)"
-        - "5550 : 3 + 4440 : 3 = (5550 + 4440) : 3 = 9990 : 3"
-        - "(800 – 72) : 8 = 800 : 8 – 72 : 8 = 100 – 9"
-        - "304 · (6 · 2) = 304 · 6 + 304 · 2 = 1824 + 608"
+      contents: |-
+        <p>2111 – 555 – 445 = 2111 – (555 + 445) = ?</p>
+        <p>530 + 70 – 36 + 24 = (530 + 70) – (36 + 24) = ?</p>
+        <p>5550 : 3 + 4440 : 3 = (5550 + 4440) : 3 = 9990 : 3 = ?</p>
+        <p>(800 – 72) : 8 = 800 : 8 – 72 : 8 = 100 – 9 = ?</p>
+        <p>304 · (6 · 2) = 304 · 6 + 304 · 2 = 1824 + 608 = ?</p>
       answers:
         - "1111"
         - "3330"
         - "91"
+      hint: "Пример: 100 200 50"
+
+    - id: 4
+      type: single_input
+      description: Выберите записи, в которых свойства действий применены в обратном  направлении, и вычислите их значения. Результаты впишите в поле ответа через пробел
+      contents: |-
+        <p>43734 – 555 – 445 = 43734 – (555 + 445) = ?</p>
+        <p>(342 + 69) – 242 = (342– 242) + 69 = ?</p>
+        <p>75 · 57 +  75 · 43  = 75 · (57 + 43) = ?</p>
+        <p>(90 – 8) · 5 = 90 · 5 – 8 · 5 = ?</p>
+      answers:
+        - "42734"
+        - "7500"
+      hint: "Пример: 100 200 50"
+
+- id: 2
+  title: Невыполнение действий
+  tasks:
+    - id: 5
+      type: single_input
+      description: Выберите выражения, к которым можно применить знания связей результатов и компонентов действий, и вычислите их значения. Результаты впишите в поле ответа через пробел
+      contents: |-
+        <p>(342 + 69) – 242 = ?</p>
+        <p>(342 + 69) – 342 = ?</p>
+        <p>(342 – 69) + 342 = ?</p>
+        <p>(342 – 69) + 69 = ?</p>
+        <p>342 – (342 – 69) = ?</p>
+      answers:
+        - "69"
+        - "342"
+        - "69"
+      hint: "Пример: 100 200 50"
+
+    - id: 6
+      type: multiple_choice
+      description: Выберите верные записи
+      contents:
+      options:
+        - text: "78540 : 60 – 78540 : 60 = 0"
+          correct: true
+        - text: "(4567  +  2756) – 4567 = 2756"
+          correct: true
+        - text: "0 · 21 + (47680 –  47680 : 5 · 4) = 0"
+          correct: false
+        - text: "0 : (637400  –  5348 · 4 )  + 9876 = 9876"
+          correct: true
+        - text: "(800 – 72) : 8 · 0 – на 0 делить  нельзя"
+          correct: false
+
+    - id: 7
+      type: multiple_choice
+      description: Выберите верные записи
+      contents:
+      options:
+        - text: "6374 – 5348) + 6374 = 5348 "
+          correct: false
+        - text: "(1600 : 8 – 32 : 8) · (32 : 8 – 4) = 0"
+          correct: true
+        - text: "(8500 + 98 – 1019) + 1019 = 8500 – 98"
+          correct: false
+        - text: "304 · (36 · 2) – 304 · 36 · 2 = 0"
+          correct: true
+        - text: "256500 : 30 · 30 = 256500 : 900"
+          correct: false
+
+    # TODO: соответствие
+
+    - id: 9
+      type: multiple_choice
+      description: Выберите верные равенства
+      contents:
+      options:
+        - text: "(965 – 18 : 9 + 9) – (965 – 18 : 9 + 9) = 1"
+          correct: false
+        - text: "(7148 + 1885) : (7148 + 1885) · 0 = 0"
+          correct: true
+        - text: "(7148 · 185) : 7148 = 185"
+          correct: true
+        - text: "7545 – (45 – 45) · (450 – 450 : 10 : 2) = 0"
+          correct: false
+        - text: "(307500 : 250) · 250 = 307500"
+          correct: true
+        - text: "4473 · 555 – 555 = 4473"
+          correct: false
+        - text: "234 + 69 + 16 + 131 = (234 + 16) + (69 + 131)"
+          correct: true
+
+    - id: 10
+      type: single_input
+      description: Выберите выражения, значения которых можете найти устно за счет невыполнения некоторых действий, и вычислите их значения. Результаты впишите в поле ответа через пробел
+      contents: |-
+        <p>4473 · 555 – 555 · 4473 = ?</p>
+        <p>(4230 + 697) · 453 : (4230 + 697) · 453 = ?</p>
+        <p>63 · (7 · 6) : 49 · 46 · (42 : 7 – 6) = ?</p>
+        <p>89000 – 890 · 90 · 0 · 5 = ?</p>
+        <p>7200 – (7200 – 509) = ?</p>
+        <p>888 : 37 – 0 : 888 : 37 = ?</p>
+      answers:
+        - "0"
+        - "0"
+        - "89000"
+        - "509"
+      hint: "Пример: 100 200 50"
+
+    # TODO: впишите пропущенные знак и число
+
+- id: 3
+  title: Методика обучения младших школьников
+  tasks:
+    - id: 11
+      type: multiple_choice
+      description: На каких этапах обучения учащихся 3 класса рационализации программы вычислений целесообразно использовать следующее задание?
+      contents: |-
+        <div class="row">
+          <div class="col text-center mb-2">
+            Вычислите значения выражений:
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-auto">
+            <pre>
+              1) 37 + 29 + 21 + 53
+                 78 – 18 : 3 · 2
+                 (93 – 38 + 37) · 0</pre>
+          </div>
+          <div class="col-auto">
+            <pre>
+              2) 16 · 4 – 4 · 16
+                 48 + 52 – 17 + 33
+                 44 · (24 – 6 · 4)</pre>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-auto">
+            <pre>
+              3) (87 + 11) – (87 – 11)
+                 37 · 2 – 37
+                 (54 + 48) – (54 + 48)</pre>
+          </div>
+          <div class="col-auto">
+            <pre>
+              4) 55 – 45 : 5 · 0
+                 39 + 1 · (9 – 7) – 7 · 3 – 1
+                 20 · (1 – 1) + 52 – 12 : 2 · 2</pre>
+          </div>
+        </div>
+      options:
+        - text: "Усвоение теоретических знаний об арифметических действиях"
+          correct: false
+        - text: "Сокращение помощи учителя"
+          correct: false
+        - text: "Самостоятельный поиск учениками удобных способов вычислений"
+          correct: true
+
+    - id: 12
+      type: single_input
+      description: Проанализируйте задания для учащихся 3 класса. Расположите их номера в порядке возрастания сложности и впишите в поле ответа через пробел
+      contents: |-
+        <div class="row">
+          <div class="col-6">
+            <p>1. Вставьте пропущенные знаки арифметических действий, чтобы равенства стали верными.</p>
+            <div class="row justify-content-center">
+              <div class="col-auto">
+                <div>100 – (57 + 17) = 100 – 57 * 17</div>
+                <div>(900 – 27) : 9 = 900 : 9 * 27 * 9</div>
+                <div>18 · (10 + 5) = 18 · 10 * 18 * 5</div>
+                <div>540 : (9 · 5) = 540 : 9 * 5</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <p>2. Впишите однозначное число в выражение, чтобы к нему можно было применить свойство деления суммы на число. Если таких чисел несколько, впишите наибольшее возможное однозначное.</p>
+            <div class="row justify-content-center">
+              <div class="col-auto">
+                <div>(280 + <input type="text" size="1" disabled>) : 4</div>
+                <div>100 : 5 + 40 : <input type="text" size="1" disabled></div>
+                <div>(140 + 70 + 21) : <input type="text" size="1" disabled></div>
+                <div>40 : <input type="text" size="1" disabled> + 4 : 2</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            <p>3. Поставьте знак ✓ у выражений, если их значения можно найти удобным способом. Впишите их значения.<p>
+            <div class="row justify-content-center">
+              <div class="col-auto">
+                <div>(56 + 17) – 26</div>
+                <div>47 + 33 – 26 + 14</div>
+                <div>90 – 42 + 8</div>
+                <div>100 – 44 – 6</div>
+                <div>28 + 36 + 12 + 14</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <p>4. Поставьте знак ✓ у выражений, если их значения можно найти удобным способом. Впишите их значения.<p>
+            <div class="row justify-content-center">
+              <div class="col-auto">
+                <div>111 – 55 – 45 = 111 – (55 + 45)</div>
+                <div>30 + 70 – 28 + 12 = (30 + 70) – (28 + 12)</div>
+                <div>(56 + 49) : 7 = 56 : 6+ 49 : 7</div>
+                <div>54 : 3 + 54 : 3 = (54 + 54) : 3</div>
+                <div>100 : 4  – 60 : 4  = (100 – 60) : 4</div>
+                <div>27 · 3 + 63 · 3 = (27 + 63) · 3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      answers:
+        "3 4 1 2"
+      hint: "Пример: 1 2 3 4"
+
+    - id: 13
+      type: single_input
+      description: Сопоставьте этапы обучения младших школьников рациональному вычислению значений выражений с подходящими для них упражнениями. Ответ впишите в поле ответа через пробел в виде пар цифра-буква (см. пример)
+      contents: |-
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-4 text-center">
+            <p>1. Подготовительный этап</p>
+          </div>
+          <div class="col-12 col-md-4 text-center">
+            <p>2. Этап первичного закрепления</p>
+          </div>
+          <div class="col-12 col-md-4 text-center">
+            <p>3. Этап вторичного закрепления</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-12 col-md-4 mb-3 text-center">
+            <p>А. Впишите  число, чтобы удобно было применить свойство деления суммы на число</p>
+            <div class="row justify-content-center">
+              <div class="col-auto">
+                <div>(280 + <input type="text" size="1" disabled>) : 7</div>
+                <div>300 : <input type="text" size="1" disabled> + 100 : 4</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 mb-3 text-center">
+            <p>Б. Расскажи по рисунку, как по-разному разделить сумму на число</p>
+            <div class="row justify-content-center">
+              <div class="col-auto">
+                <img class="img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABjCAYAAADeg0+zAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4wYNDyYHd8i/SwAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAS2SURBVHja7d3NaxRnAMfx3zMvu5s0cWPBNl0SkNpDDyI5JIh4KckxFJRCk0MQxRY8loI9SgWDVyn0oIdevVhzs6e2f0A8GCRSalOENIeYFCUxLzuzM08P2cTdJEIq9Hmm5PuBJWYu8+SZ+e7OBPOMEYrASBqSlDW/DyVNS7JMDSCVmjG0vkpMi38BU1AI9oDbQCAAgQAEAhAIQCAAgQAgEIBAAAIBCAQgEIBA8GbmgNtw2AwNDXEibNn9v3mBLYODg7/tc4Ictlf+hn8f1tdAEc7NqCCNrFarFd24cU4dHe7/DKKzs6SrV3/UwsIL3b37hdbWEnfXuIHR3NySJicftH6Smtu3JxRFgazDz5Lu7orGxu7o4sUzmpgYVqPRcH4s5uf/1pUrPyjL8oRAWnR1lXXhwhkdOdLhYe+dunnzJy0svND4+CeS1p3eBk5P/6nJyQdtWy9fPqswjBxfbXVpbOyOenurGhn5UFLq/Eg8eVKRKdBFd6QCyXNfl9/5PrcC7va99XPvnYswzD3cBql5ghpPvyco1i0pv8UCCAQgEIBAAAIBCAQgEIBAAAIBCAQAgQAEAhAIQCAAgQAEAhAIQCAAgQAEAoBAAAIBCAQgEIBAAAL5N1jUfGcm7OHcd9FEBQglt9YaySpJrOp190enXG5fetTlGIJAyrK9S4w2Grkkt4tXl8uvd5ZluZIkd34sWuY+KMK5aSR9JGNuydrU0yAyIw0HYXD0vWPvyATu12YNjNHi81Wlaa7+/p5918r9rxhJ9STT0tKrtu21WtX5Is5BYDQ//3JnXJ6vI36WtOpxGLGkryJJPbJ29NNLlxSGofNRhGGoX+7f16uVFR3t/9jbGJ4vP5RUV6napzzL3O3cGOXr69KuQMrVmkwQvNX1jgmCtzrBwyiS5h/pWK2m2vHjynMPnyAbG/p9Zkbv9/WNnB0ddXssJBlj9HJ5Wb9OTUnSt0bSoKTph9aq4uEuoCzps9Ontby4qKmnT9Udx84PSrek4YEB/TEzo7+s1Yrjm8BHjx9r/NSptu0z1srlTFhJ70r6wBh9ee2avrl+XT4e0DH37JnOnTih4fPn9f29e87HEEianZ3V5ydPStLQzuMPks1NmUrFz8MH8lzWWm2srSnq6fFyI2ab75Zrcv10EGlzfe8e19NUpTh2ejy2R5GmqTYkL4HUm3ORZZnqHsZgJKX1ulSAGyCg8AgEIBCAQAACAQgEIBCAQAACAQgEIBAABAIQCEAgAIEABAIQCEAgAIEABAIQCAACAQgEIBCAQAACAQpuZ+nR7aXEvazqvb1vY5zv3+76mY2HOTD7LONudn11MQ/7zYHxdC74Oh9N6xia3w9Kmo5LJT+JGqNGsrUCa+Rh4erWMVhrFZfLzp8gY61VI21/+oSP42GMUVKvKwjDrZXePTxJZ3sugiBQGMdex6Dm4tWLkm6lSdLw/XGWJom8j6Fl4WKHb96hpK/bNub5d41Go+7jTTzPMuePHdgzhjxX7v5Y7L66WuQisxjiZiitr5hp4SYdIBCAQAACAQgEAIEABAIQCEAgAIEABAIQCEAgAIEABAKAQAAC+T8yB9wGxyKmoBBSSb16vXaCaW6DZ/8A1mPlK8PfPlMAAAAASUVORK5CYII=">
+                <div class="text-center">(4 + 6) : 2</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 mb-3 text-center">
+            <p>В. Вычисли, если можно, удобным способом</p>
+            <div class="row justify-content-center">
+              <div class="col-auto">
+                <div>(63 + 54) :  9</div>
+                <div>(76 + 4) : 4</div>
+                <div>54 : 3 + 36 : 3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      answers:
+        - "1Б"
+        - "2В"
+        - "3А"
+      hint: "Пример: 1А 2Б 3В"

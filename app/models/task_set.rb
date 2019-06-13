@@ -1,14 +1,18 @@
 class TaskSet < Struct.new(:id, :title, :tasks, keyword_init: true)
   class << self
     def find(id)
-      TASK_SETS[id.to_i] || raise(ActiveRecord::RecordNotFound)
+      task_sets[id.to_i] || raise(ActiveRecord::RecordNotFound)
     end
 
     def all
-      TASK_SETS.values
+      task_sets.values
     end
 
     private
+
+    def task_sets
+      parse_task_sets(YAML.load_file('app/data/task_sets.yml'))
+    end
 
     def parse_task_sets(raw_task_sets)
       raw_task_sets.map do |raw_ts|
@@ -23,6 +27,4 @@ class TaskSet < Struct.new(:id, :title, :tasks, keyword_init: true)
       end.to_h
     end
   end
-
-  TASK_SETS = parse_task_sets(YAML.load_file('app/data/task_sets.yml'))
 end

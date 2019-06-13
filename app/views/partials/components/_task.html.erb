@@ -5,13 +5,15 @@
     </div>
   </div>
 
-  <div class="task__body">
-    <div class="task__contents">
-      <% task.contents.each do |text| %>
-        <div class="task__content-block"><%= text %></div>
-      <% end %>
+  <% if task.contents %>
+    <div class="task__body">
+      <div class="task__contents">
+        <hr />
+        <%= raw task.contents %>
+        <hr />
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <div class="task__footer">
     <%= render 'partials/components/task_controls', task: task %>

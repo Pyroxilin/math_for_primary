@@ -24,7 +24,10 @@
       @extend .col-auto;
       @extend .text-left;
 
-      .task__content-block { @extend .mt-2; }
+      .task__content-block {
+        @extend .mt-2;
+        white-space: pre-wrap;
+      }
     }
   }
 

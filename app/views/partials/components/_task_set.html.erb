@@ -3,7 +3,7 @@
     <div class="task-set__task-selector">
       <%= render 'partials/components/task_set/task_selector',
                  tasks: tasks,
-                 current_task_id: current_task[:id] %>
+                 current_task_id: current_task.id %>
     </div>
   </div>
 
@@ -15,9 +15,16 @@
 
   <div class="task-set__footer">
     <div class="task-set__navigation">
+      <%
+        task_ids = tasks.map { |task| task[:id] }
+        current_index = task_ids.index(current_task.id)
+
+        prev_id = current_index - 1 >= 0 ? task_ids[current_index - 1] : nil
+        next_id = current_index + 1 < tasks.size ? task_ids[current_index + 1] : nil
+      %>
       <%= render 'partials/components/task_set/navigation',
-                 prev_url: (current_task[:id] - 1) >= 0 ? "?tid=#{(current_task[:id] - 1)}" : nil,
-                 next_url: (current_task[:id] + 1) < tasks.size ? "?tid=#{(current_task[:id] + 1)}" : nil %>
+                 prev_url: prev_id ? "?tid=#{prev_id}" : nil,
+                 next_url: next_id ? "?tid=#{next_id}" : nil %>
     </div>
   </div>
 </div>

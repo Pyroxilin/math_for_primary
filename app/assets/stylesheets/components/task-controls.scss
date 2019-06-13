@@ -40,8 +40,14 @@
 
 .single-input-task-controls {
   @extend .col-auto;
+  @extend .text-left;
 }
 
 .single-input-task-controls__input {
   @extend .form-control;
+}
+.single-input-task-controls__hint {
+  @extend .form-text;
+  @extend .text-muted;
+  @extend .px-2;
 }

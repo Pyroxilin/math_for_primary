@@ -1,4 +1,4 @@
-class Task < Struct.new(:id, :type, :description, :contents, :options, :answers,
+class Task < Struct.new(:id, :type, :description, :contents, :options, :answers, :hint,
                         keyword_init: true)
   def initialize(args)
     super

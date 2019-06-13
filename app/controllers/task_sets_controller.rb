@@ -6,6 +6,6 @@ class TaskSetsController < ApplicationController
     @tasks = task_set.tasks.map { |task| { id: task[:id], status: nil } }
 
     task_id = params.fetch(:tid, 0).to_i
-    @current_task = task_set.tasks.fetch(task_id, task_set.tasks.first)
+    @current_task = task_set.tasks.find { |t| t.id == task_id } || task_set.tasks.first
   end
 end

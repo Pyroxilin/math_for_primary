@@ -22,10 +22,23 @@
       <a class="sections-menu__link" href="#">Невыполнение действий</a>
     </li>
     <li class="sections-menu__nav-item">
-      <a class="sections-menu__link" href="#">Практика</a>
+      <a class="sections-menu__link
+                <%= 'sections-menu__link--active' if current_page?(task_set_path(2)) %>"
+         href="<%= task_set_path(2) %>"
+      >
+        Практика
+      </a>
     </li>
     <li class="sections-menu__nav-item">
-      <a class="sections-menu__link" href="#">Более сложные примеры</a>
+      <a class="sections-menu__link" href="#">Методика обучения младших школьников</a>
+    </li>
+    <li class="sections-menu__nav-item">
+      <a class="sections-menu__link
+                <%= 'sections-menu__link--active' if current_page?(task_set_path(3)) %>"
+         href="<%= task_set_path(3) %>"
+      >
+        Практика
+      </a>
     </li>
   </ul>
 
