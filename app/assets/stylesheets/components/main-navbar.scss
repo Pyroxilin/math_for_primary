@@ -15,6 +15,12 @@
 .main-navbar__nav-link {
   @extend .nav-item;
   @extend .nav-link;
+  @extend .text-light;
+
+  &:hover, &:focus, &:active { text-decoration: underline; }
 }
 
-.main-navbar__nav-link--active { @extend .active; }
+.main-navbar__nav-link--active {
+  @extend .active;
+  text-decoration: underline;
+}
