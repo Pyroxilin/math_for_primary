@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   $(window).keypress(function(e){
     var key = e.keyCode ? e.keyCode : e.which;
     if (key == 83) {// shift+s
