@@ -16,11 +16,16 @@
   @extend .nav-item;
   @extend .nav-link;
   @extend .text-light;
+  @extend .p-0;
+  @extend .mx-2;
+  @extend .border-bottom;
 
-  &:hover, &:focus, &:active { text-decoration: underline; }
+  border-color: transparent !important;
+  border-bottom-width: .25rem !important;
+
+  &.main-navbar__nav-link--active {
+    @extend .active;
+    @extend .border-light;
+  }
 }
 
-.main-navbar__nav-link--active {
-  @extend .active;
-  text-decoration: underline;
-}
