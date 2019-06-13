@@ -16,7 +16,7 @@
     <div class="main-navbar__nav">
       <%
         [
-          ['Материалы', contents_path],
+          ['Материалы', course_path],
           (['Контроль',  exams_path] if user_signed_in?),
           ['О проекте', about_path]
         ].compact.each do |title, url|

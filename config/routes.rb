@@ -4,8 +4,13 @@ Rails.application.routes.draw do
   root to: 'static_pages#home'
   get 'about', to: 'static_pages#about'
 
-  resources :task_sets, only: [:show]
-  resources :contents, only: [:index, :show]
+  namespace 'course' do
+    get '', to: 'theory#index'
+
+    resources :task_sets, only: [:show]
+    resources :theory, only: [:index, :show]
+  end
+
   resources :exams do
     member do
       post 'start', to: 'exams#start', as: :start
