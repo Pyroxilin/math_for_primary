@@ -15,41 +15,80 @@
                 <%= 'sections-menu__link--active' if current_page?(task_set_path(1)) %>"
          href="<%= task_set_path(1) %>"
       >
-        Практика
+        └─ Практика
       </a>
     </li>
     <li class="sections-menu__nav-item">
-      <a class="sections-menu__link" href="#">Невыполнение действий</a>
+      <a class="sections-menu__link
+                <%= 'sections-menu__link--active' if current_page?(content_path('1-2_skipping_actions')) %>"
+         href="<%= content_path('1-2_skipping_actions') %>"
+      >
+        Невыполнение действий
+      </a>
     </li>
     <li class="sections-menu__nav-item">
       <a class="sections-menu__link
                 <%= 'sections-menu__link--active' if current_page?(task_set_path(2)) %>"
          href="<%= task_set_path(2) %>"
       >
-        Практика
+        └─ Практика
       </a>
     </li>
     <li class="sections-menu__nav-item">
-      <a class="sections-menu__link" href="#">Методика обучения младших школьников</a>
+      <a class="sections-menu__link
+                <%= 'sections-menu__link--active' if current_page?(content_path('1-3_complex_conditions')) %>"
+         href="<%= content_path('1-3_complex_conditions') %>"
+      >
+        Усложнение  условий
+      </a>
+    </li>
+    <li class="sections-menu__nav-item">
+      <a class="sections-menu__link" href="#"></a>
+    </li>
+  </ul>
+
+  <h6 class="sections-menu__header">2. Методика обучения младших школьников</h6>
+
+  <ul class="sections-menu__nav">
+    <li class="sections-menu__nav-item">
+      <a class="sections-menu__link
+                <%= 'sections-menu__link--active' if current_page?(content_path('2-1_general_information')) %>"
+         href="<%= content_path('2-1_general_information') %>"
+      >
+        Общая информация
+      </a>
+    </li>
+    <li class="sections-menu__nav-item">
+      <a class="sections-menu__link
+                <%= 'sections-menu__link--active' if current_page?(content_path('2-2_stage_1')) %>"
+         href="<%= content_path('2-2_stage_1') %>"
+      >
+        Этап 1: Усвоение теории арифметических действий
+      </a>
+    </li>
+    <li class="sections-menu__nav-item">
+      <a class="sections-menu__link
+                <%= 'sections-menu__link--active' if current_page?(content_path('2-3_stage_2')) %>"
+         href="<%= content_path('2-3_stage_2') %>"
+      >
+        Этап 2: Сокращение помощи учителя, усвоение новых теоретических знаний
+      </a>
+    </li>
+    <li class="sections-menu__nav-item">
+      <a class="sections-menu__link
+                <%= 'sections-menu__link--active' if current_page?(content_path('2-4_stage_3')) %>"
+         href="<%= content_path('2-4_stage_3') %>"
+      >
+        Этап 3: Самостоятельный поиск удобных способов вычислений
+      </a>
     </li>
     <li class="sections-menu__nav-item">
       <a class="sections-menu__link
                 <%= 'sections-menu__link--active' if current_page?(task_set_path(3)) %>"
          href="<%= task_set_path(3) %>"
       >
-        Практика
+        └─ Практика
       </a>
-    </li>
-  </ul>
-
-  <h6 class="sections-menu__header">2. Рационализация выполнения вычислений</h6>
-
-  <ul class="sections-menu__nav">
-    <li class="sections-menu__nav-item">
-      <a class="sections-menu__link" href="#">???</a>
-    </li>
-    <li class="sections-menu__nav-item">
-      <a class="sections-menu__link" href="#">???</a>
     </li>
   </ul>
 </nav>

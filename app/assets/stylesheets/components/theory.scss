@@ -18,3 +18,20 @@
 .theory__header {
   @extend .mt-3;
 }
+
+.theory__list {
+  counter-reset: list;
+
+  @for $i from 0 through 20 {
+    &[start="#{$i}"] { counter-reset: list ($i - 1); }
+  }
+
+  .theory__list-item { list-style: none; }
+}
+
+.theory__list--parenthesized {
+  .theory__list-item:before {
+    content: counter(list, decimal) ") ";
+    counter-increment: list;
+  }
+}
