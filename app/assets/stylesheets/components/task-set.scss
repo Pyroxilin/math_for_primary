@@ -33,6 +33,9 @@
   @extend .p-0;
 }
 
+.task-set__task--correct { background-color: #e9f7ef; }
+.task-set__task--incorrect { background-color: #f9ebea; }
+
 .task-set__footer {
   @extend .row;
   @extend .py-2;

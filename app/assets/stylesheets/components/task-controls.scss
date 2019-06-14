@@ -7,6 +7,12 @@
   @extend .justify-content-center;
 }
 
+.task-controls__status {
+  @extend .row;
+  @extend .mt-3;
+  @extend .justify-content-center;
+}
+
 .task-controls__submit {
   @extend .row;
   @extend .justify-content-center;

@@ -14,6 +14,11 @@
       <%= render 'partials/components/task_controls/single_input', hint: task.hint, submission: submission %>
     <% end %>
   </div>
+  <% if submission && %[correct incorrect].include?(submission.status) %>
+    <div class="task-controls__status">
+      <%= submission.status == 'correct' ? 'Правильно!' : 'Не правильно (' %>
+    </div>
+  <% end %>
   <div class="task-controls__submit">
     <button type="submit" class="task-controls__submit-btn">
       <%= event.is_a?(Exam) ? 'Отправить' : 'Проверить' %>

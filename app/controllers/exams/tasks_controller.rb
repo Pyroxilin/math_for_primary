@@ -27,7 +27,7 @@ module Exams
     end
 
     def set_examinee
-      @examinee = Examinee.find_by(id: session['exam_sessions'][@exam.id.to_s])
+      @examinee = Examinee.find_by(id: session.dig('exam_sessions', @exam.id.to_s))
       redirect_to new_exam_session_path(session_token: @exam.session_token) unless @examinee
     end
   end

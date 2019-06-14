@@ -3,9 +3,6 @@
   @extend .py-2;
 }
 
-.task--correct { background-color: #e9f7ef; }
-.task--incorrect { background-color: #f9ebea; }
-
 .task__header {
   @extend .row;
   @extend .justify-content-center;
