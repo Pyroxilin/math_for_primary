@@ -1,6 +1,7 @@
 .sign-in-controls__sign-in-btn {
   @extend .btn;
-  @extend .btn-outline-secondary;
+  @extend .btn-link;
+  @extend .text-secondary;
 }
 
 .sign-in-controls__sign-in-icon {
