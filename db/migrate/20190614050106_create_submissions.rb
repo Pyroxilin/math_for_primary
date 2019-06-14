@@ -6,7 +6,7 @@ class CreateSubmissions < ActiveRecord::Migration[6.0]
       t.integer :task_id, null: false
       t.string :contents, null: false, array: true
 
-      t.references
+      t.timestamps
     end
 
     add_index :submissions, [:exam_id, :examinee_id, :task_id], unique: true
