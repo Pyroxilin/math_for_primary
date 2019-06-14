@@ -16,7 +16,7 @@
   </div>
   <% if submission && %[correct incorrect].include?(submission.status) %>
     <div class="task-controls__status">
-      <%= submission.status == 'correct' ? 'Правильно!' : 'Не правильно (' %>
+      <%= submission.status == 'correct' ? 'Правильно!' : 'Неправильно (' %>
     </div>
   <% end %>
   <div class="task-controls__submit">

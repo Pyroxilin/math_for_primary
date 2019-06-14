@@ -6,7 +6,7 @@ module Course
     before_action :init_session
 
     def show
-      task_id = params[:tid].to_i
+      task_id = (params[:tid] || @task_set.tasks.first.id).to_i
       @current_task = @task_set.tasks.find { |t| t.id == task_id }
       raise(ActionController::RoutingError, 'Not Found') unless @current_task
 
