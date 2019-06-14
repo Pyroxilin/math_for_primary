@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_06_14_050106) do
     t.bigint "exam_id", null: false
     t.integer "task_id", null: false
     t.string "contents", null: false, array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["exam_id", "examinee_id", "task_id"], name: "index_submissions_on_exam_id_and_examinee_id_and_task_id", unique: true
     t.index ["exam_id"], name: "index_submissions_on_exam_id"
     t.index ["examinee_id"], name: "index_submissions_on_examinee_id"

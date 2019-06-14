@@ -18,7 +18,8 @@
         [
           ['Материалы', course_path],
           (['Контроль',  exams_path] if user_signed_in?),
-          ['О проекте', about_path]
+          ['О проекте', about_path],
+          ['Контакты', contacts_path],
         ].compact.each do |title, url|
       %>
         <a class="main-navbar__nav-link
