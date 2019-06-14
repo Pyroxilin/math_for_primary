@@ -1,1 +1,11 @@
-<%= render 'partials/pages/exam_tasks_page', current_task: @current_task, tasks: @tasks %>
+<div class="h-100">
+  <%=
+    render(
+      'partials/components/task_set',
+      current_task: @current_task,
+      tasks: @tasks,
+      event: @exam,
+      submission: @submission
+    )
+  %>
+</div>

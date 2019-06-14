@@ -15,7 +15,10 @@
   width: 25px;
   line-height: 0;
 }
-.task-selector__task-marker--solved { @extend .bg-success; }
+.task-selector__task-marker--correct { @extend .bg-success; }
+.task-selector__task-marker--incorrect { @extend .bg-danger; }
+.task-selector__task-marker--submitted { @extend .bg-info; }
 .task-selector__task-marker.task-selector__task-marker--current {
-  @extend .border-danger;
+  @extend .border-primary;
+  border-width: 2px !important;
 }

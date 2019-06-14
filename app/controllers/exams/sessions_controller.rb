@@ -5,9 +5,11 @@ module Exams
     def show
       @token = params.fetch(:id)
       @exam = find_exam(@token)
-      @username = session.dig('exam_sessions', @exam.id.to_s, 'username')
 
-      redirect_to new_exam_session_path(session_token: @token) if @username.nil?
+      examinee_id = session.dig('exam_sessions', @exam.id.to_s)
+      @examinee = Examinee.find_by(id: examinee_id)
+
+      redirect_to new_exam_session_path(session_token: @token) if @examinee.nil?
     end
 
     def new
@@ -19,7 +21,9 @@ module Exams
       token = session_params.fetch(:token)
       exam = find_exam(token)
 
-      session['exam_sessions'][exam.id] = {'username' => username }
+      examinee = exam.examinees.find_or_create_by(username: username)
+
+      session['exam_sessions'][exam.id] = examinee.id
       redirect_to exam_tasks_path(exam.id)
     end
 
@@ -38,7 +42,7 @@ module Exams
     end
 
     def find_exam(token)
-      Exam.find_by_token(token) || raise(ActiveRecord::RecordNotFound)
+      Exam.find_by_token(token) || raise(ActiveRecord::RecordNotFound, 'Not found')
     end
 
     def session_params

@@ -1,14 +1,24 @@
-<form class="task-controls">
+<%=
+  form_for(
+    'submission',
+    method: :post,
+    url: event.is_a?(Exam) ? exam_submissions_path(event.id) : submit_course_task_set_path(event.id),
+    html: { class: "task-controls" }
+  ) do |f|
+%>
+  <%= f.hidden_field :task_id, value: task.id %>
   <div class="task-controls__inputs">
     <% if task.multiple_choice? %>
-      <%= render 'partials/components/task_controls/multiple_choice', options: task[:options] %>
+      <%= render 'partials/components/task_controls/multiple_choice', options: task.options, submission: submission %>
     <% elsif task.single_input? %>
-      <%= render 'partials/components/task_controls/single_input', hint: task.hint %>
+      <%= render 'partials/components/task_controls/single_input', hint: task.hint, submission: submission %>
     <% end %>
   </div>
   <div class="task-controls__submit">
-    <button type="submit" class="task-controls__submit-btn">Проверить</button>
+    <button type="submit" class="task-controls__submit-btn">
+      <%= event.is_a?(Exam) ? 'Отправить' : 'Проверить' %>
+    </button>
   </div>
-</form>
+<% end %>
 
 

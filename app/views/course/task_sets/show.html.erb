@@ -1,1 +1,9 @@
-<%= render 'partials/components/task_set', tasks: @tasks, current_task: @current_task %>
+<%=
+  render(
+    'partials/components/task_set',
+    tasks: @tasks,
+    current_task: @current_task,
+    event: @task_set,
+    submission: @submission
+  )
+%>

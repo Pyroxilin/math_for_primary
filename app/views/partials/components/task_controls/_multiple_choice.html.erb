@@ -3,7 +3,10 @@
     <div class="multiple-choice-task-controls__option">
       <input class="multiple-choice-task-controls__checkbox"
              type="checkbox"
-             id="option-<%= id %>">
+             id="option-<%= id %>"
+             value="<%= id %>"
+             <%= 'checked' if submission.present? && submission.contents.include?(id.to_s) %>
+             name="submission[contents][]">
 
       <label class="multiple-choice-task-controls__label"
              for="option-<%= id %>">

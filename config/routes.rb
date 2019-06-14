@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   namespace 'course' do
     get '', to: 'theory#index'
 
-    resources :task_sets, only: [:show]
+    resources :task_sets, only: [:show] do
+      member do
+        post 'submit', to: 'task_sets#submit'
+      end
+    end
     resources :theory, only: [:index, :show]
   end
 
@@ -20,8 +24,10 @@ Rails.application.routes.draw do
     with_options module: 'exams' do
       resources :links, only: [:index]
       resources :tasks, only: [:index]
+      resources :submissions, only: [:create]
     end
   end
+
   resources :exam_sessions, only: [:show, :new, :create, :destroy], module: 'exams', controller: 'sessions'
 
   resources :join, only: [:show]

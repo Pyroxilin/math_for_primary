@@ -4,6 +4,8 @@ class Exam < ActiveRecord::Base
   enum status: %w[created ongoing finished]
 
   belongs_to :user
+  has_many :examinees, dependent: :destroy
+  has_many :submissions, dependent: :destroy
 
   validates_presence_of :user, :title, :task_set_id, :status, :session_token
   validates_uniqueness_of :session_token

@@ -1,5 +1,9 @@
 <div class="single-input-task-controls">
-  <input class="single-input-task-controls__input" type="text" name="answer" placeholder="Ваш ответ...">
+  <input type="text"
+         class="single-input-task-controls__input"
+         name="submission[contents][]"
+         value="<%= submission&.contents&.join %>"
+         placeholder="Ваш ответ...">
   <% if hint %>
     <small class="single-input-task-controls__hint">
       <%= hint %>

@@ -1,9 +1,9 @@
 <div class="exam-session-page">
   <div class="exam-session-page__row">
     <div class="exam-session-page__content-col">
-      <% if username %>
+      <% if examinee %>
         <%= render 'partials/components/exams/exam_session_username_check',
-                   token: token, username: username, exam_id: exam_id %>
+                   token: token, username: examinee.username, exam_id: exam_id %>
       <% else %>
         <%= render 'partials/components/exams/exam_session_form', token: token %>
       <% end %>
