@@ -6,8 +6,10 @@ module Course
     before_action :init_session
 
     def show
-      task_id = (params[:tid] || @task_set.tasks.first.id).to_i
-      @current_task = @task_set.tasks.find { |t| t.id == task_id }
+      task_id = params[:tid]
+      tasks = @task_set.tasks
+
+      @current_task = task_id ? tasks.find { |t| t.id == task_id.to_i } : tasks.first
       raise(ActionController::RoutingError, 'Not Found') unless @current_task
 
       @submission = find_submission(task_id)

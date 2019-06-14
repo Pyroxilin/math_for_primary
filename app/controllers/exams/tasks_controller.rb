@@ -6,8 +6,10 @@ module Exams
     before_action :set_examinee
 
     def index
-      task_id = params[:tid].to_i
-      @current_task = @exam.task_set.tasks.find { |t| t.id == task_id }
+      task_id = params[:tid]
+      tasks = @exam.task_set.tasks
+
+      @current_task = task_id ? tasks.find { |t| t.id == task_id.to_i } : tasks.first
       raise(ActionController::RoutingError, 'Not Found') unless @current_task
 
       @submission = @exam.submissions.find_by(examinee: @examinee, task_id: task_id)
