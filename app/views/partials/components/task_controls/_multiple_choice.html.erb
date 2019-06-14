@@ -6,6 +6,7 @@
              id="option-<%= id %>"
              value="<%= id %>"
              <%= 'checked' if submission.present? && submission.contents.include?(id.to_s) %>
+             <%= 'disabled' if mode == :show %>
              name="submission[contents][]">
 
       <label class="multiple-choice-task-controls__label"

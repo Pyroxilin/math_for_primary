@@ -2,25 +2,23 @@
   <thead class="exam-results-table__header">
     <tr>
       <th scope="col">Студент</th>
-      <th class="exam-results-table__score-header" scope="col">Баллы</th>
+      <th class="exam-results-table__score-header" scope="col">Результат</th>
       <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     <%
-      Array.new(10) do
-        {score: rand(100), name: Array.new(rand(5..10)) { ('a'..'z').to_a.sample }.join}
-      end.each do |result|
+      @exam.examinees.each do |examinee|
     %>
       <tr>
         <th scope="row">
-          <%= result[:name].capitalize %>
+          <%= examinee.username %>
         </th>
         <td class="exam-results-table__score-colunm">
-          <%= result[:score] %>/100 (<%= result[:score] %>%)
+          <%= examinee.score %> / <%= exam.task_set.tasks.size %>
         </td>
         <td class="exam-results-table__controls-colunm">
-          <a href="#" class="exam-results-table__show-btn">
+          <a href="<%= exam_examinee_path(@exam, examinee) %>" class="exam-results-table__show-btn">
             <i class="exam-results-table__eye-icon"></i>
           </a>
         </td>

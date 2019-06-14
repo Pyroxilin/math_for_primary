@@ -3,8 +3,9 @@
          class="single-input-task-controls__input"
          name="submission[contents][]"
          value="<%= submission&.contents&.join %>"
-         placeholder="Ваш ответ...">
-  <% if hint %>
+         <%= 'disabled' if mode == :show %>
+         placeholder="<%= 'Ваш ответ...' if mode == :solve %>">
+  <% if mode == :solve && hint %>
     <small class="single-input-task-controls__hint">
       <%= hint %>
     </small>

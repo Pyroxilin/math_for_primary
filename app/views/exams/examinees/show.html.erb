@@ -1,0 +1,15 @@
+<div class="container m-0 p-0">
+  <h1 class="col-12 text-center">
+    <%= @examinee.username %> (<%= @examinee.score %> / <%= @exam.task_set.tasks.size %>)
+  </h1>
+  <% @tasks.each do |task| %>
+    <div class="row">
+      <div class="col-12">
+        <%= render 'partials/components/task', task: task, event: @exam.task_set, submission: @submissions.find_by(task_id: task.id), mode: :show %>
+        <hr>
+      </div>
+    </div>
+  <% end %>
+
+  <%= render 'partials/components/back_navigation', back_url: exam_path(@exam) %>
+</div>

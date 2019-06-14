@@ -10,7 +10,7 @@
   <div class="task-set__body">
     <div class="task-set__task
                 <%= "task-set__task--#{submission.status}" if !event.is_a?(Exam) && submission %>">
-      <%= render 'partials/components/task', task: current_task, event: event, submission: submission %>
+      <%= render 'partials/components/task', task: current_task, event: event, submission: submission, mode: :solve %>
     </div>
   </div>
 

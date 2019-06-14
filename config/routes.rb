@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       resources :links, only: [:index]
       resources :tasks, only: [:index]
       resources :submissions, only: [:create]
+      resources :examinees, only: [:show]
     end
   end
 
