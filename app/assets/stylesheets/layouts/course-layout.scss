@@ -1,4 +1,10 @@
 .course-layout {
+  @extend .container-fluid;
+  @extend .w-100;
+  @extend .h-100;
+}
+
+.course-layout__row {
   @extend .row;
   @extend .flex-fill;
 }
