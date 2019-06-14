@@ -18,12 +18,15 @@
   @extend .text-light;
   @extend .p-0;
   @extend .mx-2;
-  @extend .border-bottom;
+}
 
+.main-navbar__nav-link-text {
+  @extend .d-inline-block;
+  @extend .border-bottom;
   border-color: transparent !important;
   border-bottom-width: .25rem !important;
 
-  &.main-navbar__nav-link--active {
+  &.main-navbar__nav-link-text--active {
     @extend .active;
     @extend .border-light;
   }

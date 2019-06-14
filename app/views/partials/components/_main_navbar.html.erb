@@ -22,10 +22,12 @@
           ['Контакты', contacts_path],
         ].compact.each do |title, url|
       %>
-        <a class="main-navbar__nav-link
-                  <%= 'main-navbar__nav-link--active' if request.path =~ /#{url}/ %>"
-           href="<%= url %>"
-        ><%= title %></a>
+        <a class="main-navbar__nav-link" href="<%= url %>">
+          <span class="main-navbar__nav-link-text
+                       <%= 'main-navbar__nav-link-text--active' if request.path =~ /#{url}/ %>">
+            <%= title %>
+          </span>
+        </a>
       <% end %>
     </div>
   </div>

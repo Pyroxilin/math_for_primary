@@ -7,6 +7,7 @@
 .course-layout__row {
   @extend .row;
   @extend .flex-fill;
+  @extend .h-100;
 }
 
 .course-layout__sections_menu {
