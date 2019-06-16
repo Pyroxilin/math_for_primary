@@ -41,7 +41,7 @@ module Course
     end
 
     def set_course_progress
-      @course_progress = CourseProgress.new(:practice, params[:id])
+      @course_progress = CourseProgress.find(:practice, params[:id])
     end
 
     def submission_params

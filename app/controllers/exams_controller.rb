@@ -3,7 +3,7 @@ class ExamsController < ApplicationController
   before_action :set_exam, only: [:show, :edit, :update, :destroy, :start, :stop]
 
   def index
-    @exams = Exam.order(created_at: :desc)
+    @exams = current_user.exams.order(created_at: :desc)
   end
 
   def show
@@ -48,6 +48,6 @@ class ExamsController < ApplicationController
   end
 
   def set_exam
-    @exam = Exam.find(params.fetch(:id).to_i)
+    @exam = current_user.exams.find(params.fetch(:id).to_i)
   end
 end

@@ -1,5 +1,5 @@
 class CourseProgress
-  class TheoryStep < Struct.new(:id, :title)
+  class TheoryStep < Struct.new(:id, :title, :content_id, keyword_init: true)
     include Rails.application.routes.url_helpers
 
     def url
@@ -7,7 +7,7 @@ class CourseProgress
     end
   end
 
-  class PracticeStep < Struct.new(:id, :title)
+  class PracticeStep < Struct.new(:id, :title, keyword_init: true)
     include Rails.application.routes.url_helpers
 
     def url
@@ -16,24 +16,52 @@ class CourseProgress
   end
 
   COURSE_FLOW = [
-    TheoryStep.new('1-1', 'Преобразование выражений'),
-    PracticeStep.new('1', 'Практика'),
-    TheoryStep.new('1-2', 'Невыполнение действий'),
-    PracticeStep.new('2', 'Практика'),
-    TheoryStep.new('1-3', 'Усложнение  условий'),
-    TheoryStep.new('2-1', 'Общая информация'),
-    TheoryStep.new('2-2', 'Этап 1: Усвоение теории арифметических действий'),
-    TheoryStep.new('2-3', 'Этап 2: Сокращение помощи учителя, усвоение новых теоретических знаний'),
-    TheoryStep.new('2-4', 'Этап 3: Самостоятельный поиск удобных способов вычислений'),
-    PracticeStep.new('3', 'Практика')
+    TheoryStep.new(
+      id: '1-1',
+      title: 'Преобразование выражений',
+      content_id: '1-1_formula_transformations'
+    ),
+    PracticeStep.new(id: '1', title: 'Практика'),
+    TheoryStep.new(
+      id: '1-2',
+      title: 'Невыполнение действий',
+      content_id: '1-2_skipping_actions'
+    ),
+    PracticeStep.new(id: '2', title: 'Практика'),
+    TheoryStep.new(
+      id: '1-3',
+      title: 'Усложнение  условий',
+      content_id: '1-3_complex_conditions'
+    ),
+    TheoryStep.new(
+      id: '2-1',
+      title: 'Общая информация',
+      content_id: '2-1_general_information'
+    ),
+    TheoryStep.new(
+      id: '2-2',
+      title: 'Этап 1: Усвоение теории арифметических действий',
+      content_id: '2-2_stage_1'
+    ),
+    TheoryStep.new(
+      id: '2-3',
+      title: 'Этап 2: Сокращение помощи учителя, усвоение новых теоретических знаний',
+      content_id: '2-3_stage_2'
+    ),
+    TheoryStep.new(
+      id: '2-4',
+      title: 'Этап 3: Самостоятельный поиск удобных способов вычислений',
+      content_id: '2-4_stage_3'
+    ),
+    PracticeStep.new(id: '3', title: 'Практика')
   ].freeze
 
   TYPE_MAPPING = { theory: TheoryStep, practice: PracticeStep }.freeze
 
-  def initialize(type, id)
-    @current_step = COURSE_FLOW.find do |step|
-      step.is_a?(TYPE_MAPPING.fetch(type)) && step.id == id
-    end
+  attr_reader :current_step
+
+  def initialize(step)
+    @current_step = step
   end
 
   def prev?
@@ -66,7 +94,17 @@ class CourseProgress
     prev_step.url
   end
 
-  private
+  class << self
+    def find(type, id)
+      step = COURSE_FLOW.find do |step|
+        step.is_a?(TYPE_MAPPING.fetch(type)) && step.id == id
+      end
 
-  attr_reader :current_step
+      step ? new(step) : nil
+    end
+
+    def step(index)
+      COURSE_FLOW[index]
+    end
+  end
 end
