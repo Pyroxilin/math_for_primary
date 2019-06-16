@@ -23,7 +23,7 @@ class ExamsController < ApplicationController
 
   def update
     # TODO: forbid to update task set for ongoing & finished exams
-    @exam.update(exam_params) ? redirect_to(@exam) : render(:show)
+    @exam.update(exam_params) ? redirect_to(@exam) : render(:edit)
   end
 
   def destroy
