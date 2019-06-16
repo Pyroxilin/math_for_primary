@@ -25,7 +25,7 @@
   <!-- TASK SET -->
   <div class="exam-form__group">
     <label for="exam_task_set">Тема</label>
-    <%= f.select(:task_set_id, TaskSet.all.map { |ts| [ts.title, ts.id] }, {}, class: 'exam-form__control') %>
+    <%= f.select(:task_set_id, TaskSet.all.map { |ts| [ts.title, ts.id] }, {}, class: 'exam-form__control', disabled: !exam.created?) %>
   </div>
 
   <%= f.submit 'Сохранить', class: 'exam-form__submit-btn' %>

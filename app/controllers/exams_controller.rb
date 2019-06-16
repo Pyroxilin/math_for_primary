@@ -22,7 +22,7 @@ class ExamsController < ApplicationController
   end
 
   def update
-    # TODO: forbid to update task set for ongoing & finished exams
+    exam_params.delete!(:task_set_id) unless @exam.created?
     @exam.update(exam_params) ? redirect_to(@exam) : render(:edit)
   end
 
