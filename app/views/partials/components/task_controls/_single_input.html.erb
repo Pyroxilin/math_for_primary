@@ -2,6 +2,7 @@
   <input type="text"
          class="single-input-task-controls__input"
          name="submission[contents][]"
+         autocomplete="off"
          value="<%= submission&.contents&.join %>"
          <%= 'disabled' if mode == :show %>
          placeholder="<%= 'Ваш ответ...' if mode == :solve %>">
