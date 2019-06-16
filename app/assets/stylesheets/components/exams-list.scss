@@ -1,4 +1,7 @@
-.exams-list { @extend .container; }
+.exams-list {
+  @extend .container;
+  @extend .py-2;
+}
 
 // HEADER
 
@@ -20,7 +23,12 @@
 // CONTENT
 
 .exams-list__content { @extend .row; }
-.exams-list__table-container { @extend .col; }
+.exams-list__table-container {
+  @extend .col;
+  @extend .px-0;
+  @extend .mx-3;
+  @extend .table-responsive;
+}
 .exams-list__table {
   @extend .table;
   @extend .table-sm;
