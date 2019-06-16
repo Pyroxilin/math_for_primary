@@ -19,7 +19,7 @@ class Task < Struct.new(:id, :type, :description, :contents, :options, :answers,
     if multiple_choice?
       options.each.with_index.select { |o, _| o[:correct] }.map { |_, i| i }.sort == answer.map(&:to_i).sort
     elsif single_input?
-      answers.permutation.any? { |variant| variant.join(' ') == answer.join.downcase }
+      answers.permutation.any? { |variant| variant.join(' ').downcase == answer.join.downcase }
     end
   end
 
