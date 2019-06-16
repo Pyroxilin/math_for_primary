@@ -1,7 +1,8 @@
 .exam-tasks-layout {
   @extend .container;
+  @extend .d-flex;
+  @extend .flex-column;
   @extend .h-100;
-  @extend .w-100;
 }
 
 .exam-tasks-layout__row {
@@ -17,4 +18,6 @@
   @extend .col-lg-8;
   @extend .h-100;
   @extend .p-0;
+  @extend .d-flex;
+  @extend .flex-column;
 }

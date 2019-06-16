@@ -7,7 +7,6 @@
 .main-layout__content {
   @extend .container-fluid;
   @extend .d-flex;
-  @extend .flex-shrink-0;
   @extend .flex-fill;
   @extend .justify-content-center;
   @extend .p-0;
