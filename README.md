@@ -13,6 +13,13 @@ rvm install 2.6.3
 rvm use 2.6.3 --default
 ```
 
+#### 2. Install & setup postgresql
+
+```bash
+sudo apt-get install postgresql postgresql-client libpq-dev
+sudo su -l -c "createuser -s $(whoami)" postgres
+```
+
 #### 2. Clone & setup
 
 ```bash
@@ -20,7 +27,7 @@ git clone git@github.com:pyroxilin/math_for_primary.git
 cd math_for_primary
 bundle install
 yarn install
-rails db:create
+rails db:create db:migrate
 ```
 
 ## Running
