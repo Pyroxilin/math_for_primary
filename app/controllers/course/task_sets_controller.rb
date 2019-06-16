@@ -4,6 +4,7 @@ module Course
 
     before_action :set_task_set
     before_action :init_session
+    before_action :set_course_progress, only: [:show]
 
     def show
       task_id = params[:tid]
@@ -37,6 +38,10 @@ module Course
 
     def init_session
       session['practice'] ||= {}
+    end
+
+    def set_course_progress
+      @course_progress = CourseProgress.new(:practice, params[:id])
     end
 
     def submission_params

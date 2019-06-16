@@ -1,0 +1,42 @@
+.section-navigation {
+  @extend .container-fluid;
+  @extend .bg-secondary;
+}
+
+.section-navigation__row {
+  @extend .row;
+  @extend .d-md-none;
+  @extend .justify-content-center;
+  @extend .py-1;
+  @extend .mx-0;
+}
+
+.section-navigation__col {
+  @extend .col-auto;
+  @extend .text-light;
+}
+
+.section-navigation__btn {
+  @extend .btn;
+  @extend .btn-secondary;
+}
+
+.section-navigation__btn--invisible {
+  @extend .invisible;
+}
+
+.section-navigation__text { @extend .mx-2; }
+
+.section-navigation__icon-back {
+  @extend .fas;
+  @extend %fa-icon;
+
+  &:before { content: fa-content($fa-var-chevron-left) }
+}
+
+.section-navigation__icon-forvard {
+  @extend .fas;
+  @extend %fa-icon;
+
+  &:before { content: fa-content($fa-var-chevron-right) }
+}

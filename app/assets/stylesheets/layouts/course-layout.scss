@@ -20,6 +20,8 @@
 }
 
 .course-layout__section-contents {
+  @extend .d-flex;
+  @extend .flex-column;
   @extend .col-lg-9;
   @extend .col-md-8;
   @extend .col-sm;

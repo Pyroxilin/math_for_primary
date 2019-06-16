@@ -1,5 +1,5 @@
 <% content_for(:content) do %>
-  <%= render 'partials/layouts/course_layout' %>
+  <%= render 'partials/layouts/course_layout', course_progress: @course_progress %>
 <% end %>
 
 <%= render template: 'layouts/application' %>

@@ -1,0 +1,23 @@
+<div class="section-navigation">
+  <div class="section-navigation__row">
+    <div class="section-navigation__col">
+      <a class="section-navigation__btn
+                <%= 'section-navigation__btn--invisible' unless course_progress.prev? %>"
+         href="<%= course_progress.prev_url %>"
+      >
+        <i class="section-navigation__icon-back"></i>
+      </a>
+
+      <span class="section-navigation__text">
+        Часть <%= course_progress.step_number %> из <%= course_progress.steps_count %>
+      </span>
+
+      <a class="section-navigation__btn
+                <%= 'section-navigation__btn--invisible' unless course_progress.next? %>"
+         href="<%= course_progress.next_url %>"
+      >
+        <i class="section-navigation__icon-forvard"></i>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,8 @@
 .task-set {
   @extend .container-fluid;
-  @extend .h-100;
   @extend .d-flex;
   @extend .flex-column;
+  @extend .flex-grow-1;
 }
 
 .task-set__header {
@@ -22,7 +22,7 @@
 .task-set__body {
   @extend .row;
   @extend .text-center;
-  @extend .flex-grow-1;
+  @extend .flex-fill;
   @extend .border-left;
   @extend .border-right;
   @extend .border-dark;

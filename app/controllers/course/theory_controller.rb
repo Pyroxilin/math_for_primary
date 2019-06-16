@@ -2,6 +2,8 @@ module Course
   class TheoryController < ApplicationController
     layout "course"
 
+    before_action :set_course_progress, only: [:show]
+
     THEORY_SECTIONS = {
       '1-1' => '1-1_formula_transformations',
       '1-2' => '1-2_skipping_actions',
@@ -20,6 +22,12 @@ module Course
       @content_id = THEORY_SECTIONS.fetch(params[:id]) do
         raise(ActionController::RoutingError, 'Not Found')
       end
+    end
+
+    private
+
+    def set_course_progress
+      @course_progress = CourseProgress.new(:theory, params[:id])
     end
   end
 end
