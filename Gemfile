@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'rqrcode'
 
 # Authentication
-gem 'devise', '~> 4.6'
+gem 'devise', '~> 4.7'
 gem 'devise-i18n', '~> 1.8'
 
 # Use Active Storage variant
